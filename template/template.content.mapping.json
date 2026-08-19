@@ -1,0 +1,1324 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "title": "Build It Factory - Template Content Mapping",
+  "description": "Maps intake schema fields to content objects, React components, and page locations. Derived from sitemap.yaml and template.intake.schema.yaml.",
+  "template_id": "ELEC-PREIMIUM-ELECTRONICS-B5",
+  "version": "1.0.0",
+  "mapping": {
+    "hero_title": {
+      "source": "intake.hero_title",
+      "destination": "Home.Hero.heading",
+      "content_object": {
+        "heading": "${intake.hero_title}",
+        "level": "h1"
+      },
+      "react_component": "HeroHeading",
+      "page_location": "home.Hero"
+    },
+    "hero_subtitle": {
+      "source": "intake.hero_subtitle",
+      "destination": "Home.Hero.subheading",
+      "content_object": {
+        "subtitle": "${intake.hero_subtitle}"
+      },
+      "react_component": "HeroSubtitle",
+      "page_location": "home.Hero"
+    },
+    "hero_image": {
+      "source": "intake.hero_image",
+      "destination": "Home.Hero.image",
+      "content_object": {
+        "src": "${intake.hero_image}",
+        "alt": "${intake.hero_title}",
+        "fill": true
+      },
+      "react_component": "HeroImage",
+      "page_location": "home.Hero"
+    },
+    "cta_primary_text": {
+      "source": "intake.cta_primary_text",
+      "destination": "Home.Hero.cta_primary",
+      "content_object": {
+        "label": "${intake.cta_primary_text}",
+        "variant": "primary"
+      },
+      "react_component": "PrimaryCTA",
+      "page_location": "home.Hero"
+    },
+    "cta_primary_url": {
+      "source": "intake.cta_primary_url",
+      "destination": "Home.Hero.cta_url",
+      "content_object": {
+        "href": "${intake.cta_primary_url}",
+        "isExternal": false,
+        "target": "_self"
+      },
+      "react_component": "PrimaryCTA",
+      "page_location": "home.Hero"
+    },
+    "secondary_cta_text": {
+      "source": "intake.secondary_cta_text",
+      "destination": "Home.Hero.cta_secondary",
+      "content_object": {
+        "label": "${intake.secondary_cta_text}",
+        "variant": "secondary"
+      },
+      "react_component": "SecondaryCTA",
+      "page_location": "home.Hero"
+    },
+    "secondary_cta_url": {
+      "source": "intake.secondary_cta_url",
+      "destination": "Home.Hero.cta_secondary_url",
+      "content_object": {
+        "href": "${intake.secondary_cta_url}",
+        "isExternal": false,
+        "target": "_self"
+      },
+      "react_component": "SecondaryCTA",
+      "page_location": "home.Hero"
+    },
+    "lifestyle_editorial_title": {
+      "source": "intake.lifestyle_editorial_title",
+      "destination": "Home.LifestyleEditorial.title",
+      "content_object": {
+        "title": "${intake.lifestyle_editorial_title}"
+      },
+      "react_component": "SectionTitle",
+      "page_location": "home.LifestyleEditorial"
+    },
+    "lifestyle_editorial_image": {
+      "source": "intake.lifestyle_editorial_image",
+      "destination": "Home.LifestyleEditorial.image",
+      "content_object": {
+        "src": "${intake.lifestyle_editorial_image}",
+        "alt": "${intake.lifestyle_editorial_title}",
+        "fill": true
+      },
+      "react_component": "LifestyleEditorialImage",
+      "page_location": "home.LifestyleEditorial"
+    },
+    "customer_benefits_title": {
+      "source": "intake.customer_benefits_title",
+      "destination": "Home.CustomerBenefits.title",
+      "content_object": {
+        "title": "${intake.customer_benefits_title}"
+      },
+      "react_component": "SectionTitle",
+      "page_location": "home.CustomerBenefits"
+    },
+    "support_section_title": {
+      "source": "intake.support_section_title",
+      "destination": "Home.SupportSection.title",
+      "content_object": {
+        "title": "${intake.support_section_title}"
+      },
+      "react_component": "SectionTitle",
+      "page_location": "home.SupportSection"
+    },
+    "newsletter_title": {
+      "source": "intake.newsletter_title",
+      "destination": "Home.Newsletter.title",
+      "content_object": {
+        "title": "${intake.newsletter_title}"
+      },
+      "react_component": "SectionTitle",
+      "page_location": "home.Newsletter"
+    },
+    "newsletter_cta_text": {
+      "source": "intake.newsletter_cta_text",
+      "destination": "Home.Newsletter.cta",
+      "content_object": {
+        "label": "${intake.newsletter_cta_text}",
+        "variant": "primary"
+      },
+      "react_component": "PrimaryCTA",
+      "page_location": "home.Newsletter"
+    },
+    "newsletter_placeholder_email": {
+      "source": "intake.newsletter_placeholder_email",
+      "destination": "Home.Newsletter.placeholder",
+      "content_object": {
+        "placeholder": "${intake.newsletter_placeholder_email}",
+        "type": "email"
+      },
+      "react_component": "EmailInput",
+      "page_location": "home.Newsletter"
+    },
+    "footer_nav_home": {
+      "source": "intake.footer_nav_home",
+      "destination": "Home.FooterNav.home",
+      "content_object": {
+        "label": "${intake.footer_nav_home}",
+        "isVisible": true
+      },
+      "react_component": "NavLink",
+      "page_location": "home.FooterNav"
+    },
+    "footer_nav_terms": {
+      "source": "intake.footer_nav_terms",
+      "destination": "Home.FooterNav.terms",
+      "content_object": {
+        "label": "${intake.footer_nav_terms}",
+        "isVisible": true
+      },
+      "react_component": "NavLink",
+      "page_location": "home.FooterNav"
+    },
+    "footer_nav_privacy": {
+      "source": "intake.footer_nav_privacy",
+      "destination": "Home.FooterNav.privacy",
+      "content_object": {
+        "label": "${intake.footer_nav_privacy}",
+        "isVisible": true
+      },
+      "react_component": "NavLink",
+      "page_location": "home.FooterNav"
+    },
+
+    "shop_by_category_title": {
+      "source": "intake.category_filter_title",
+      "destination": "Home.ShopByCategory.title",
+      "content_object": {
+        "title": "${intake.category_filter_title}"
+      },
+      "react_component": "SectionTitle",
+      "page_location": "home.ShopByCategory"
+    },
+    "shop_by_category_subtitle": {
+      "source": "intake.category_filter_subtitle",
+      "destination": "Home.ShopByCategory.subtitle",
+      "content_object": {
+        "subtitle": "${intake.category_filter_subtitle}"
+      },
+      "react_component": "SectionSubtitle",
+      "page_location": "home.ShopByCategory"
+    },
+
+    "editorial_banner_title": {
+      "source": "intake.banner_title",
+      "destination": "Home.EditorialBanner.title",
+      "content_object": {
+        "title": "${intake.banner_title}"
+      },
+      "react_component": "EditorialBanner",
+      "page_location": "home.EditorialBanner"
+    },
+    "editorial_banner_image": {
+      "source": "intake.banner_image",
+      "destination": "Home.EditorialBanner.image",
+      "content_object": {
+        "src": "${intake.banner_image}",
+        "alt": "${intake.banner_title}",
+        "fill": true
+      },
+      "react_component": "EditorialBannerImage",
+      "page_location": "home.EditorialBanner"
+    },
+    "editorial_banner_cta_text": {
+      "source": "intake.banner_cta_text",
+      "destination": "Home.EditorialBanner.cta",
+      "content_object": {
+        "label": "${intake.banner_cta_text}",
+        "href": "${intake.banner_cta_url}"
+      },
+      "react_component": "EditorialBannerCTA",
+      "page_location": "home.EditorialBanner"
+    },
+
+    "featured_product_highlight_title": {
+      "source": "intake.featured_product_highlight_title",
+      "destination": "Home.FeaturedProducts.highlight_title",
+      "content_object": {
+        "title": "${intake.featured_product_highlight_title}"
+      },
+      "react_component": "ProductHighlightTitle",
+      "page_location": "home.FeaturedProducts"
+    },
+    "featured_product_highlight_cta": {
+      "source": "intake.featured_product_highlight_cta",
+      "destination": "Home.FeaturedProducts.highlight_cta",
+      "content_object": {
+        "label": "${intake.featured_product_highlight_cta}"
+      },
+      "react_component": "PrimaryCTA",
+      "page_location": "home.FeaturedProducts"
+    },
+
+    "product_categories_title": {
+      "source": "intake.category_filter_title",
+      "destination": "Home.ProductCategories.title",
+      "content_object": {
+        "title": "${intake.category_filter_title}"
+      },
+      "react_component": "SectionTitle",
+      "page_location": "home.ProductCategories"
+    },
+    "product_categories_subtitle": {
+      "source": "intake.category_filter_subtitle",
+      "destination": "Home.ProductCategories.subtitle",
+      "content_object": {
+        "subtitle": "${intake.category_filter_subtitle}"
+      },
+      "react_component": "SectionSubtitle",
+      "page_location": "home.ProductCategories"
+    },
+
+    "new_arrivals_title": {
+      "source": "intake.new_arrivals_title",
+      "destination": "Home.NewArrivals.title",
+      "content_object": {
+        "title": "${intake.new_arrivals_title}"
+      },
+      "react_component": "SectionTitle",
+      "page_location": "home.NewArrivals"
+    },
+    "new_arrivals_cta_text": {
+      "source": "intake.new_arrivals_cta_text",
+      "destination": "Home.NewArrivals.cta",
+      "content_object": {
+        "label": "${intake.new_arrivals_cta_text}",
+        "variant": "primary"
+      },
+      "react_component": "PrimaryCTA",
+      "page_location": "home.NewArrivals"
+    },
+
+    "page_title": {
+      "source": "intake.page_title",
+      "destination": "Shop.PageHeader.title",
+      "content_object": {
+        "title": "${intake.page_title}"
+      },
+      "react_component": "PageHeader",
+      "page_location": "shop.PageHeader"
+    },
+    "page_subtitle": {
+      "source": "intake.page_subtitle",
+      "destination": "Shop.PageHeader.subtitle",
+      "content_object": {
+        "subtitle": "${intake.page_subtitle}"
+      },
+      "react_component": "PageSubtitle",
+      "page_location": "shop.PageHeader"
+    },
+
+    "filter_title": {
+      "source": "intake.filter_title",
+      "destination": "Shop.CatalogFilters.title",
+      "content_object": {
+        "title": "${intake.filter_title}"
+      },
+      "react_component": "SectionTitle",
+      "page_location": "shop.CatalogFilters"
+    },
+    "price_min": {
+      "source": "intake.price_min",
+      "destination": "Shop.CatalogFilters.price_min",
+      "content_object": {
+        "minimum": "${intake.price_min}",
+        "operator": "gte"
+      },
+      "react_component": "PriceFilter",
+      "page_location": "shop.CatalogFilters"
+    },
+    "price_max": {
+      "source": "intake.price_max",
+      "destination": "Shop.CatalogFilters.price_max",
+      "content_object": {
+        "maximum": "${intake.price_max}",
+        "operator": "lte"
+      },
+      "react_component": "PriceFilter",
+      "page_location": "shop.CatalogFilters"
+    },
+    "product_grid_caption": {
+      "source": "intake.product_grid_caption",
+      "destination": "Shop.ProductGrid.caption",
+      "content_object": {
+        "caption": "${intake.product_grid_caption}"
+      },
+      "react_component": "ProductGridCaption",
+      "page_location": "shop.ProductGrid"
+    },
+
+    "category_title": {
+      "source": "intake.category_title",
+      "destination": "Category.Hero.title",
+      "content_object": {
+        "title": "${intake.category_title}"
+      },
+      "react_component": "CategoryHeroTitle",
+      "page_location": "category.Hero"
+    },
+    "category_description": {
+      "source": "intake.category_description",
+      "destination": "Category.Hero.description",
+      "content_object": {
+        "description": "${intake.category_description}"
+      },
+      "react_component": "CategoryHeroDescription",
+      "page_location": "category.Hero"
+    },
+    "category_image": {
+      "source": "intake.category_image",
+      "destination": "Category.Hero.image",
+      "content_object": {
+        "src": "${intake.category_image}",
+        "alt": "${intake.category_title}",
+        "fill": true
+      },
+      "react_component": "CategoryHeroImage",
+      "page_location": "category.Hero"
+    },
+
+    "catalog_filters_title_1": {
+      "source": "intake.filter_title_1",
+      "destination": "Category.CatalogFilters.title",
+      "content_object": {
+        "title": "${intake.filter_title_1}"
+      },
+      "react_component": "SectionTitle",
+      "page_location": "category.CatalogFilters"
+    },
+    "price_min_1": {
+      "source": "intake.price_min_1",
+      "destination": "Category.CatalogFilters.price_min",
+      "content_object": {
+        "minimum": "${intake.price_min_1}",
+        "operator": "gte"
+      },
+      "react_component": "PriceFilter",
+      "page_location": "category.CatalogFilters"
+    },
+    "price_max_1": {
+      "source": "intake.price_max_1",
+      "destination": "Category.CatalogFilters.price_max",
+      "content_object": {
+        "maximum": "${intake.price_max_1}",
+        "operator": "lte"
+      },
+      "react_component": "PriceFilter",
+      "page_location": "category.CatalogFilters"
+    },
+    "product_grid_caption_1": {
+      "source": "intake.product_grid_caption_1",
+      "destination": "Category.ProductGrid.caption",
+      "content_object": {
+        "caption": "${intake.product_grid_caption_1}"
+      },
+      "react_component": "ProductGridCaption",
+      "page_location": "category.ProductGrid"
+    },
+
+    "product_gallery_images": {
+      "source": "intake.product_gallery_images",
+      "destination": "Product.Gallery.images",
+      "content_object": {
+        "images": "${intake.product_gallery_images}",
+        "mainImage": "${intake.product_gallery_images[0]}",
+        "alt": "${intake.product_title}",
+        "carousal": true
+      },
+      "react_component": "ProductGallery",
+      "page_location": "product.Gallery"
+    },
+    "product_gallery_alt_text": {
+      "source": "intake.product_gallery_alt_text",
+      "destination": "Product.Gallery.alt_text",
+      "content_object": {
+        "alt": "${intake.product_gallery_alt_text}"
+      },
+      "react_component": "ProductGallery",
+      "page_location": "product.Gallery"
+    },
+
+    "product_title": {
+      "source": "intake.product_title",
+      "destination": "Product.Info.title",
+      "content_object": {
+        "title": "${intake.product_title}",
+        "isTruncated": false
+      },
+      "react_component": "ProductTitle",
+      "page_location": "product.Info"
+    },
+    "product_price": {
+      "source": "intake.product_price",
+      "destination": "Product.Info.price",
+      "content_object": {
+        "price": "${intake.product_price}",
+        "currency": "USD",
+        "isOnSale": "${intake.product_compare_at_price is defined}"
+      },
+      "react_component": "ProductPrice",
+      "page_location": "product.Info"
+    },
+    "product_compare_at_price": {
+      "source": "intake.product_compare_at_price",
+      "destination": "Product.Info.compare_at_price",
+      "content_object": {
+        "compareAtPrice": "${intake.product_compare_at_price}",
+        "isStrikethrough": true
+      },
+      "react_component": "ProductPrice",
+      "page_location": "product.Info"
+    },
+    "product_sku": {
+      "source": "intake.product_sku",
+      "destination": "Product.Info.sku",
+      "content_object": {
+        "sku": "${intake.product_sku}",
+        "isVisible": true
+      },
+      "react_component": "ProductSKU",
+      "page_location": "product.Info"
+    },
+    "product_description": {
+      "source": "intake.product_description",
+      "destination": "Product.Info.description",
+      "content_object": {
+        "description": "${intake.product_description}"
+      },
+      "react_component": "ProductDescription",
+      "page_location": "product.Info"
+    },
+    "product_variant_label": {
+      "source": "intake.product_variant_label",
+      "destination": "Product.Info.variant_label",
+      "content_object": {
+        "label": "${intake.product_variant_label}",
+        "selectorType": "variant"
+      },
+      "react_component": "ProductVariantSelector",
+      "page_location": "product.Info"
+    },
+
+    "product_features_title": {
+      "source": "intake.product_features_title",
+      "destination": "Product.Features.title",
+      "content_object": {
+        "title": "${intake.product_features_title}"
+      },
+      "react_component": "SectionTitle",
+      "page_location": "product.Features"
+    },
+    "product_feature_bullets": {
+      "source": "intake.product_feature_bullets",
+      "destination": "Product.Features.bullets",
+      "content_object": {
+        "bullets": "${intake.product_feature_bullets}"
+      },
+      "react_component": "FeatureBullets",
+      "page_location": "product.Features"
+    },
+
+    "related_products_count": {
+      "source": "intake.related_products_count",
+      "destination": "Product.Related.count",
+      "content_object": {
+        "count": "${intake.related_products_count}",
+        "showMore": true
+      },
+      "react_component": "RelatedProducts",
+      "page_location": "product.Related"
+    },
+
+    "cart_subtitle": {
+      "source": "intake.cart_subtitle",
+      "destination": "Cart.CartItems.subtitle",
+      "content_object": {
+        "subtitle": "${intake.cart_subtitle}"
+      },
+      "react_component": "SectionSubtitle",
+      "page_location": "cart.CartItems"
+    },
+    "cart_summary_subtitle": {
+      "source": "intake.cart_summary_subtitle",
+      "destination": "Cart.CartItems.summary_subtitle",
+      "content_object": {
+        "subtitle": "${intake.cart_summary_subtitle}"
+      },
+      "react_component": "SummarySubtitle",
+      "page_location": "cart.CartItems"
+    },
+    "cart_subtotal": {
+      "source": "intake.cart_subtotal",
+      "destination": "Cart.CartSummary.subtotal",
+      "content_object": {
+        "amount": "${intake.cart_subtotal}",
+        "currency": "USD",
+        "isTaxIncluded": false
+      },
+      "react_component": "CartSummaryValue",
+      "page_location": "cart.CartSummary"
+    },
+    "cart_shipping": {
+      "source": "intake.cart_shipping",
+      "destination": "Cart.CartSummary.shipping",
+      "content_object": {
+        "amount": "${intake.cart_shipping}",
+        "currency": "USD",
+        "isVisible": "${intake.cart_shipping > 0}"
+      },
+      "react_component": "CartSummaryValue",
+      "page_location": "cart.CartSummary"
+    },
+    "cart_total": {
+      "source": "intake.cart_total",
+      "destination": "Cart.CartSummary.total",
+      "content_object": {
+        "amount": "${intake.cart_total}",
+        "currency": "USD",
+        "isBold": true
+      },
+      "react_component": "CartSummaryValue",
+      "page_location": "cart.CartSummary"
+    },
+
+    "checkout_cta_text": {
+      "source": "intake.checkout_cta_text",
+      "destination": "Cart.CheckoutCta.text",
+      "content_object": {
+        "label": "${intake.checkout_cta_text}",
+        "variant": "primary",
+        "isDisabled": false
+      },
+      "react_component": "PrimaryCTA",
+      "page_location": "cart.CheckoutCta"
+    },
+
+    "customer_title": {
+      "source": "intake.customer_title",
+      "destination": "Checkout.CustomerInfo.title",
+      "content_object": {
+        "title": "${intake.customer_title}"
+      },
+      "react_component": "SectionTitle",
+      "page_location": "checkout.CustomerInfo"
+    },
+    "customer_name_field": {
+      "source": "intake.customer_name_field",
+      "destination": "Checkout.CustomerInfo.name_field_label",
+      "content_object": {
+        "label": "${intake.customer_name_field}",
+        "type": "text"
+      },
+      "react_component": "FormLabel",
+      "page_location": "checkout.CustomerInfo"
+    },
+    "customer_email_field": {
+      "source": "intake.customer_email_field",
+      "destination": "Checkout.CustomerInfo.email_field_label",
+      "content_object": {
+        "label": "${intake.customer_email_field}",
+        "type": "email"
+      },
+      "react_component": "FormLabel",
+      "page_location": "checkout.CustomerInfo"
+    },
+
+    "shipping_title": {
+      "source": "intake.shipping_title",
+      "destination": "Checkout.Shipping.title",
+      "content_object": {
+        "title": "${intake.shipping_title}"
+      },
+      "react_component": "SectionTitle",
+      "page_location": "checkout.Shipping"
+    },
+    "shipping_address_lines": {
+      "source": "intake.shipping_address_lines",
+      "destination": "Checkout.Shipping.address_lines",
+      "content_object": {
+        "fields": "${intake.shipping_address_lines}",
+        "isRequired": true
+      },
+      "react_component": "AddressForm",
+      "page_location": "checkout.Shipping"
+    },
+
+    "payment_title": {
+      "source": "intake.payment_title",
+      "destination": "Checkout.Payment.title",
+      "content_object": {
+        "title": "${intake.payment_title}"
+      },
+      "react_component": "SectionTitle",
+      "page_location": "checkout.Payment"
+    },
+    "payment_method_label": {
+      "source": "intake.payment_method_label",
+      "destination": "Checkout.Payment.method_label",
+      "content_object": {
+        "label": "${intake.payment_method_label}",
+        "isVisible": true
+      },
+      "react_component": "PaymentMethodLabel",
+      "page_location": "checkout.Payment"
+    },
+
+    "order_review_title": {
+      "source": "intake.order_review_title",
+      "destination": "Checkout.OrderReview.title",
+      "content_object": {
+        "title": "${intake.order_review_title}"
+      },
+      "react_component": "SectionTitle",
+      "page_location": "checkout.OrderReview"
+    },
+    "order_review_subtitle": {
+      "source": "intake.order_review_subtitle",
+      "destination": "Checkout.OrderReview.subtitle",
+      "content_object": {
+        "subtitle": "${intake.order_review_subtitle}"
+      },
+      "react_component": "SectionSubtitle",
+      "page_location": "checkout.OrderReview"
+    },
+
+    "confirmation_title": {
+      "source": "intake.confirmation_title",
+      "destination": "Confirmation.Confirmation.title",
+      "content_object": {
+        "title": "${intake.confirmation_title}"
+      },
+      "react_component": "ConfirmationTitle",
+      "page_location": "Confirmation.Confirmation"
+    },
+    "confirmation_subtitle": {
+      "source": "intake.confirmation_subtitle",
+      "destination": "Confirmation.Confirmation.subtitle",
+      "content_object": {
+        "subtitle": "${intake.confirmation_subtitle}"
+      },
+      "react_component": "ConfirmationSubtitle",
+      "page_location": "Confirmation.Confirmation"
+    },
+    "order_number": {
+      "source": "intake.order_number",
+      "destination": "Confirmation.OrderNumber",
+      "content_object": {
+        "orderNumber": "${intake.order_number}"
+      },
+      "react_component": "OrderNumber",
+      "page_location": "Confirmation.Confirmation"
+    },
+    "continue_shopping_cta_text": {
+      "source": "intake.continue_shopping_cta_text",
+      "destination": "Confirmation.ContinueShopping.cta",
+      "content_object": {
+        "label": "${intake.continue_shopping_cta_text}",
+        "variant": "primary",
+        "href": "/",
+        "target": "_self"
+      },
+      "react_component": "NavigationCTA",
+      "page_location": "Confirmation.ContinueShopping"
+    },
+
+    "search_placeholder": {
+      "source": "intake.search_placeholder",
+      "destination": "Search.SearchBar.placeholder",
+      "content_object": {
+        "placeholder": "${intake.search_placeholder}",
+        "type": "search"
+      },
+      "react_component": "SearchInput",
+      "page_location": "search.SearchBar"
+    },
+    "search_button_text": {
+      "source": "intake.search_button_text",
+      "destination": "Search.SearchBar.button_text",
+      "content_object": {
+        "label": "${intake.search_button_text}",
+        "accessible": true
+      },
+      "react_component": "SearchButton",
+      "page_location": "search.SearchBar"
+    },
+    "search_results_no_matches_message": {
+      "source": "intake.search_results_no_matches_message",
+      "destination": "Search.Results.no_matches_message",
+      "content_object": {
+        "message": "${intake.search_results_no_matches_message}",
+        "isVisible": "${search_results_length === 0}"
+      },
+      "react_component": "NoResultsMessage",
+      "page_location": "search.Results"
+    },
+    "no_results_message": {
+      "source": "intake.no_results_message",
+      "destination": "Search.NoResults.message",
+      "content_object": {
+        "message": "${intake.no_results_message}",
+        "isVisible": true
+      },
+      "react_component": "NoResultsView",
+      "page_location": "search.NoResults"
+    },
+
+    "support_hero_title": {
+      "source": "intake.support_hero_title",
+      "destination": "Support.Hero.title",
+      "content_object": {
+        "title": "${intake.support_hero_title}"
+      },
+      "react_component": "SectionTitle",
+      "page_location": "support.Hero"
+    },
+    "support_hero_image": {
+      "source": "intake.support_hero_image",
+      "destination": "Support.Hero.image",
+      "content_object": {
+        "src": "${intake.support_hero_image}",
+        "alt": "Support section",
+        "fill": true
+      },
+      "react_component": "SupportHeroImage",
+      "page_location": "support.Hero"
+    },
+    "support_email": {
+      "source": "intake.support_email",
+      "destination": "Support.ContactMethods.email",
+      "content_object": {
+        "email": "${intake.support_email}"
+      },
+      "react_component": "ContactMethod",
+      "page_location": "support.ContactMethods"
+    },
+    "support_phone": {
+      "source": "intake.support_phone",
+      "destination": "Support.ContactMethods.phone",
+      "content_object": {
+        "phone": "${intake.support_phone}"
+      },
+      "react_component": "ContactMethod",
+      "page_location": "support.ContactMethods"
+    },
+    "support_callback": {
+      "source": "intake.support_callback",
+      "destination": "Support.ContactMethods.callback",
+      "content_object": {
+        "label": "${intake.support_callback}",
+        "variant": "primary"
+      },
+      "react_component": "PrimaryCTA",
+      "page_location": "support.ContactMethods"
+    },
+    "support_articles_title": {
+      "source": "intake.support_articles_title",
+      "destination": "Support.Articles.title",
+      "content_object": {
+        "title": "${intake.support_articles_title}"
+      },
+      "react_component": "SectionTitle",
+      "page_location": "support.Articles"
+    },
+    "support_faq_link": {
+      "source": "intake.support_faq_link",
+      "destination": "Support.Articles.faq_link",
+      "content_object": {
+        "href": "${intake.support_faq_link}",
+        "isExternal": false,
+        "target": "_self"
+      },
+      "react_component": "NavLink",
+      "page_location": "support.Articles"
+    },
+    "service_overview_title": {
+      "source": "intake.service_overview_title",
+      "destination": "Support.ServiceOverview.title",
+      "content_object": {
+        "title": "${intake.service_overview_title}"
+      },
+      "react_component": "SectionTitle",
+      "page_location": "support.ServiceOverview"
+    },
+    "service_list_title": {
+      "source": "intake.service_list_title",
+      "destination": "Support.ServiceList.title",
+      "content_object": {
+        "title": "${intake.service_list_title}"
+      },
+      "react_component": "SectionTitle",
+      "page_location": "support.ServiceList"
+    },
+
+    "contact_hero_title": {
+      "source": "intake.contact_hero_title",
+      "destination": "Contact.Hero.title",
+      "content_object": {
+        "title": "${intake.contact_hero_title}"
+      },
+      "react_component": "SectionTitle",
+      "page_location": "contact.Hero"
+    },
+    "contact_hero_image": {
+      "source": "intake.contact_hero_image",
+      "destination": "Contact.Hero.image",
+      "content_object": {
+        "src": "${intake.contact_hero_image}",
+        "alt": "Contact section",
+        "fill": true
+      },
+      "react_component": "AboutHeroImage",
+      "page_location": "contact.Hero"
+    },
+    "contact_form_name": {
+      "source": "intake.contact_form_name",
+      "destination": "Contact.Form.name",
+      "content_object": {
+        "label": "${intake.contact_form_name}",
+        "type": "text"
+      },
+      "react_component": "FormLabel",
+      "page_location": "contact.Form"
+    },
+    "contact_form_email": {
+      "source": "intake.contact_form_email",
+      "destination": "Contact.Form.email",
+      "content_object": {
+        "label": "${intake.contact_form_email}",
+        "type": "email"
+      },
+      "react_component": "FormLabel",
+      "page_location": "contact.Form"
+    },
+    "contact_form_subject": {
+      "source": "intake.contact_form_subject",
+      "destination": "Contact.Form.subject",
+      "content_object": {
+        "label": "${intake.contact_form_subject}",
+        "type": "text"
+      },
+      "react_component": "FormLabel",
+      "page_location": "contact.Form"
+    },
+    "contact_form_message": {
+      "source": "intake.contact_form_message",
+      "destination": "Contact.Form.message",
+      "content_object": {
+        "label": "${intake.contact_form_message}",
+        "type": "textarea"
+      },
+      "react_component": "Textarea",
+      "page_location": "contact.Form"
+    },
+    "store_locator_search_query": {
+      "source": "intake.store_locator_search_query",
+      "destination": "Contact.StoreLocator.search_query",
+      "content_object": {
+        "query": "${intake.store_locator_search_query}"
+      },
+      "react_component": "SearchInput",
+      "page_location": "contact.StoreLocator"
+    },
+    "store_locator_map_zoom": {
+      "source": "intake.store_locator_map_zoom",
+      "destination": "Contact.StoreLocator.map_zoom",
+      "content_object": {
+        "zoom": "${intake.store_locator_map_zoom}"
+      },
+      "react_component": "Map",
+      "page_location": "contact.StoreLocator"
+    },
+    "social_link_facebook": {
+      "source": "intake.social_link_facebook",
+      "destination": "Contact.SocialLinks.facebook",
+      "content_object": {
+        "href": "${intake.social_link_facebook}",
+        "isExternal": true,
+        "target": "_blank"
+      },
+      "react_component": "SocialLink",
+      "page_location": "contact.SocialLinks"
+    },
+    "social_link_twitter": {
+      "source": "intake.social_link_twitter",
+      "destination": "Contact.SocialLinks.twitter",
+      "content_object": {
+        "href": "${intake.social_link_twitter}",
+        "isExternal": true,
+        "target": "_blank"
+      },
+      "react_component": "SocialLink",
+      "page_location": "contact.SocialLinks"
+    },
+    "social_link_instagram": {
+      "source": "intake.social_link_instagram",
+      "destination": "Contact.SocialLinks.instagram",
+      "content_object": {
+        "href": "${intake.social_link_instagram}",
+        "isExternal": true,
+        "target": "_blank"
+      },
+      "react_component": "SocialLink",
+      "page_location": "contact.SocialLinks"
+    },
+
+    "not_found_message": {
+      "source": "intake.not_found_message",
+      "destination": "NotFound.Message",
+      "content_object": {
+        "message": "${intake.not_found_message}"
+      },
+      "react_component": "NotFoundMessage",
+      "page_location": "not_found.Message"
+    },
+    "navigation_cta_text": {
+      "source": "intake.navigation_cta_text",
+      "destination": "NotFound.NavigationCta.text",
+      "content_object": {
+        "label": "${intake.navigation_cta_text}",
+        "variant": "primary",
+        "href": "/",
+        "target": "_self"
+      },
+      "react_component": "NavigationCTA",
+      "page_location": "not_found.NavigationCta"
+    },
+
+    "wishlist_hero_title": {
+      "source": "intake.wishlist_hero_title",
+      "destination": "Wishlist.Hero.title",
+      "content_object": {
+        "title": "${intake.wishlist_hero_title}"
+      },
+      "react_component": "SectionTitle",
+      "page_location": "wishlist.Hero"
+    },
+    "wishlist_hero_image": {
+      "source": "intake.wishlist_hero_image",
+      "destination": "Wishlist.Hero.image",
+      "content_object": {
+        "src": "${intake.wishlist_hero_image}",
+        "alt": "Wishlist section",
+        "fill": true
+      },
+      "react_component": "WishlistHeroImage",
+      "page_location": "wishlist.Hero"
+    },
+    "wishlist_grid_caption": {
+      "source": "intake.wishlist_grid_caption",
+      "destination": "Wishlist.Grid.caption",
+      "content_object": {
+        "caption": "${intake.wishlist_grid_caption}"
+      },
+      "react_component": "SectionCaption",
+      "page_location": "wishlist.Grid"
+    },
+
+    "account_nav_title": {
+      "source": "intake.account_nav_title",
+      "destination": "Account.AccountNav.title",
+      "content_object": {
+        "title": "${intake.account_nav_title}"
+      },
+      "react_component": "NavTitle",
+      "page_location": "account.AccountNav"
+    },
+    "orders_title": {
+      "source": "intake.orders_title",
+      "destination": "Account.Orders.title",
+      "content_object": {
+        "title": "${intake.orders_title}"
+      },
+      "react_component": "SectionTitle",
+      "page_location": "account.Orders"
+    },
+    "orders_subtitle": {
+      "source": "intake.orders_subtitle",
+      "destination": "Account.Orders.subtitle",
+      "content_object": {
+        "subtitle": "${intake.orders_subtitle}"
+      },
+      "react_component": "SectionSubtitle",
+      "page_location": "account.Orders"
+    },
+    "profile_title": {
+      "source": "intake.profile_title",
+      "destination": "Account.Profile.title",
+      "content_object": {
+        "title": "${intake.profile_title}"
+      },
+      "react_component": "SectionTitle",
+      "page_location": "account.Profile"
+    },
+    "profile_subtitle": {
+      "source": "intake.profile_subtitle",
+      "destination": "Account.Profile.subtitle",
+      "content_object": {
+        "subtitle": "${intake.profile_subtitle}"
+      },
+      "react_component": "SectionSubtitle",
+      "page_location": "account.Profile"
+    },
+    "addresses_title": {
+      "source": "intake.addresses_title",
+      "destination": "Account.Addresses.title",
+      "content_object": {
+        "title": "${intake.addresses_title}"
+      },
+      "react_component": "SectionTitle",
+      "page_location": "account.Addresses"
+    },
+    "addresses_subtitle": {
+      "source": "intake.addresses_subtitle",
+      "destination": "Account.Addresses.subtitle",
+      "content_object": {
+        "subtitle": "${intake.addresses_subtitle}"
+      },
+      "react_component": "SectionSubtitle",
+      "page_location": "account.Addresses"
+    },
+
+    "order_tracking_hero_title": {
+      "source": "intake.order_tracking_hero_title",
+      "destination": "OrderTracking.Hero.title",
+      "content_object": {
+        "title": "${intake.order_tracking_hero_title}"
+      },
+      "react_component": "SectionTitle",
+      "page_location": "order_tracking.Hero"
+    },
+    "order_tracking_hero_subtitle": {
+      "source": "intake.order_tracking_hero_subtitle",
+      "destination": "OrderTracking.Hero.subtitle",
+      "content_object": {
+        "subtitle": "${intake.order_tracking_hero_subtitle}"
+      },
+      "react_component": "SectionSubtitle",
+      "page_location": "order_tracking.Hero"
+    },
+    "order_tracking_order_number": {
+      "source": "intake.order_tracking_order_number",
+      "destination": "OrderTracking.OrderNumber",
+      "content_object": {
+        "orderNumber": "${intake.order_tracking_order_number}"
+      },
+      "react_component": "OrderNumber",
+      "page_location": "order_tracking.OrderNumber"
+    },
+    "order_tracking_email": {
+      "source": "intake.order_tracking_email",
+      "destination": "OrderTracking.Email",
+      "content_object": {
+        "email": "${intake.order_tracking_email}"
+      },
+      "react_component": "EmailInput",
+      "page_location": "order_tracking.Email"
+    },
+
+    "store_locator_hero_title": {
+      "source": "intake.store_locator_hero_title",
+      "destination": "StoreLocator.Hero.title",
+      "content_object": {
+        "title": "${intake.store_locator_hero_title}"
+      },
+      "react_component": "SectionTitle",
+      "page_location": "store_locator.Hero"
+    },
+    "store_locator_hero_subtitle": {
+      "source": "intake.store_locator_hero_subtitle",
+      "destination": "StoreLocator.Hero.subtitle",
+      "content_object": {
+        "subtitle": "${intake.store_locator_hero_subtitle}"
+      },
+      "react_component": "SectionSubtitle",
+      "page_location": "store_locator.Hero"
+    },
+    "store_grid_caption": {
+      "source": "intake.store_grid_caption",
+      "destination": "StoreLocator.Grid.caption",
+      "content_object": {
+        "caption": "${intake.store_grid_caption}"
+      },
+      "react_component": "SectionCaption",
+      "page_location": "store_locator.Grid"
+    },
+    "store_grid_no_results": {
+      "source": "intake.store_grid_no_results",
+      "destination": "StoreLocator.Grid.no_results",
+      "content_object": {
+        "message": "${intake.store_grid_no_results}",
+        "isVisible": true
+      },
+      "react_component": "NoResultsView",
+      "page_location": "store_locator.Grid"
+    },
+
+    "faq_hero_title": {
+      "source": "intake.faq_hero_title",
+      "destination": "FAQ.Hero.title",
+      "content_object": {
+        "title": "${intake.faq_hero_title}"
+      },
+      "react_component": "SectionTitle",
+      "page_location": "faq.Hero"
+    },
+    "faq_hero_image": {
+      "source": "intake.faq_hero_image",
+      "destination": "FAQ.Hero.image",
+      "content_object": {
+        "src": "${intake.faq_hero_image}",
+        "alt": "FAQ section",
+        "fill": true
+      },
+      "react_component": "FAQHeroImage",
+      "page_location": "faq.Hero"
+    },
+    "faq_grid_caption": {
+      "source": "intake.faq_grid_caption",
+      "destination": "FAQ.Grid.caption",
+      "content_object": {
+        "caption": "${intake.faq_grid_caption}"
+      },
+      "react_component": "SectionCaption",
+      "page_location": "faq.Grid"
+    },
+
+    "reviews_hero_title": {
+      "source": "intake.reviews_hero_title",
+      "destination": "Reviews.Hero.title",
+      "content_object": {
+        "title": "${intake.reviews_hero_title}"
+      },
+      "react_component": "SectionTitle",
+      "page_location": "reviews.Hero"
+    },
+    "reviews_hero_image": {
+      "source": "intake.reviews_hero_image",
+      "destination": "Reviews.Hero.image",
+      "content_object": {
+        "src": "${intake.reviews_hero_image}",
+        "alt": "Reviews section",
+        "fill": true
+      },
+      "react_component": "ReviewsHeroImage",
+      "page_location": "reviews.Hero"
+    },
+    "review_list_caption": {
+      "source": "intake.review_list_caption",
+      "destination": "Reviews.List.caption",
+      "content_object": {
+        "caption": "${intake.review_list_caption}"
+      },
+      "react_component": "SectionCaption",
+      "page_location": "reviews.List"
+    },
+
+    "blog_hero_title": {
+      "source": "intake.blog_hero_title",
+      "destination": "Blog.Hero.title",
+      "content_object": {
+        "title": "${intake.blog_hero_title}"
+      },
+      "react_component": "SectionTitle",
+      "page_location": "blog.Hero"
+    },
+    "blog_hero_image": {
+      "source": "intake.blog_hero_image",
+      "destination": "Blog.Hero.image",
+      "content_object": {
+        "src": "${intake.blog_hero_image}",
+        "alt": "Blog section",
+        "fill": true
+      },
+      "react_component": "BlogHeroImage",
+      "page_location": "blog.Hero"
+    },
+    "article_list_caption": {
+      "source": "intake.article_list_caption",
+      "destination": "Blog.ArticleList.caption",
+      "content_object": {
+        "caption": "${intake.article_list_caption}"
+      },
+      "react_component": "SectionCaption",
+      "page_location": "blog.ArticleList"
+    },
+
+    "privacy_title": {
+      "source": "intake.privacy_title",
+      "destination": "Legal.Header.title",
+      "content_object": {
+        "title": "${intake.privacy_title}"
+      },
+      "react_component": "LegalHeaderTitle",
+      "page_location": "legal.Header"
+    },
+    "privacy_subtitle": {
+      "source": "intake.privacy_subtitle",
+      "destination": "Legal.Header.subtitle",
+      "content_object": {
+        "subtitle": "${intake.privacy_subtitle}"
+      },
+      "react_component": "LegalHeaderSubtitle",
+      "page_location": "legal.Header"
+    },
+    "privacy_body_content": {
+      "source": "intake.privacy_body_content",
+      "destination": "Legal.Body.content",
+      "content_object": {
+        "content": "${intake.privacy_body_content}"
+      },
+      "react_component": "LegalBody",
+      "page_location": "legal.Body"
+    },
+
+    "terms_title": {
+      "source": "intake.terms_title",
+      "destination": "Legal.Header.title",
+      "content_object": {
+        "title": "${intake.terms_title}"
+      },
+      "react_component": "LegalHeaderTitle",
+      "page_location": "legal.Header"
+    },
+    "terms_subtitle": {
+      "source": "intake.terms_subtitle",
+      "destination": "Legal.Header.subtitle",
+      "content_object": {
+        "subtitle": "${intake.terms_subtitle}"
+      },
+      "react_component": "LegalHeaderSubtitle",
+      "page_location": "legal.Header"
+    },
+    "terms_body_content": {
+      "source": "intake.terms_body_content",
+      "destination": "Legal.Body.content",
+      "content_object": {
+        "content": "${intake.terms_body_content}"
+      },
+      "react_component": "LegalBody",
+      "page_location": "legal.Body"
+    },
+
+    "returns_title": {
+      "source": "intake.returns_title",
+      "destination": "Legal.Header.title",
+      "content_object": {
+        "title": "${intake.returns_title}"
+      },
+      "react_component": "LegalHeaderTitle",
+      "page_location": "legal.Header"
+    },
+    "returns_subtitle": {
+      "source": "intake.returns_subtitle",
+      "destination": "Legal.Header.subtitle",
+      "content_object": {
+        "subtitle": "${intake.returns_subtitle}"
+      },
+      "react_component": "LegalHeaderSubtitle",
+      "page_location": "legal.Header"
+    },
+    "returns_body_content": {
+      "source": "intake.returns_body_content",
+      "destination": "Legal.Body.content",
+      "content_object": {
+        "content": "${intake.returns_body_content}"
+      },
+      "react_component": "LegalBody",
+      "page_location": "legal.Body"
+    }
+  }
+}

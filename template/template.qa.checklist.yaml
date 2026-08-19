@@ -1,0 +1,432 @@
+# Build It Factory — QA Checklist
+# Template: ELEC-PREIMIUM-ELECTRONICS-B5 | Phase 10
+# Validates: Pages, Content, Design, Functionality, Extensions, Technical Requirements.
+# Traceability: every requirement maps to sitemap.yaml, template.intake.schema.yaml,
+#               template.manifest.yaml, or template.extensions.yaml.
+
+schema_version: 1.0.0
+template_id: ELEC-PREIMIUM-ELECTRONICS-B5
+description: >
+  QA checklist for the E2 – Premium Electronics & Accessories template
+  implementation reference. Each section validates one concern area and
+  every check cites its source artifact(s).
+
+---
+# ===========================================================================
+# 1. PAGES
+# Trace: sitemap.yaml (core_pages + additional_pages + global_layout),
+#        template.manifest.yaml (pages.required + pages.additional)
+# ===========================================================================
+
+pages:
+  # --- CORE PAGES (manifest pages.required — must exist and render) ---
+  - id: home
+    route: /
+    source: sitemap.core_pages.home | manifest.pages.required[0]
+    check: "app/page.tsx exists and renders home content object sections
+      (Hero, FeaturedProducts, ProductCategories, NewArrivals, EditorialBanner,
+      ShopByCategory, LifestyleEditorial, CustomerBenefits, SupportSection,
+      Newsletter) — HTTP 200"
+  - id: shop
+    route: /shop
+    source: sitemap.core_pages.shop | manifest.pages.required[1]
+    check: "app/shop/page.tsx exists and renders shop content object
+      (PageHeader, CatalogFilters, ProductGrid, Pagination) — HTTP 200"
+  - id: category
+    route: /shop/[category]
+    source: sitemap.core_pages.category | manifest.pages.required[2]
+    check: "app/shop/[category]/page.tsx exists, typed params, title derives
+      from slug, renders category content object — /shop/smartphones HTTP 200"
+  - id: product
+    route: /product/[id]
+    source: sitemap.core_pages.product | manifest.pages.required[3]
+    check: "app/product/[id]/page.tsx exists, typed params, renders product
+      content object (Gallery, Info, Features, Related) —
+      /product/iphone-15-pro HTTP 200"
+  - id: comparison
+    route: /compare
+    source: sitemap.core_pages.comparison | manifest.pages.required[4]
+    check: "app/compare/page.tsx renders comparison content object
+      (ProductSelection, ProductImages, KeySpecs, Features, PurchaseCta) — 200"
+  - id: collections
+    route: /collections
+    source: sitemap.core_pages.collections | manifest.pages.required[5]
+    check: "app/collections/page.tsx renders collections content object
+      (Hero, Grid, FeaturedCollection) — HTTP 200"
+  - id: deals
+    route: /deals
+    source: sitemap.core_pages.deals | manifest.pages.required[6]
+    check: "app/deals/page.tsx renders deals content object (Hero, Grid,
+      PromotionBanner) — HTTP 200"
+  - id: accessories
+    route: /accessories
+    source: sitemap.core_pages.accessories | manifest.pages.required[7]
+    check: "app/accessories/page.tsx renders accessories content object
+      (Hero, Grid, CompatibilityNotes) — HTTP 200"
+  - id: cart
+    route: /cart
+    source: sitemap.core_pages.cart | manifest.pages.required[8]
+    check: "app/cart/page.tsx renders cart content object (CartItems,
+      CartSummary, CheckoutCta) — HTTP 200"
+  - id: checkout
+    route: /checkout
+    source: sitemap.core_pages.checkout | manifest.pages.required[9]
+    check: "app/checkout/page.tsx renders checkout content object (CustomerInfo,
+      Shipping, Payment, OrderReview) — HTTP 200"
+  - id: confirmation
+    route: /confirmation
+    source: sitemap.core_pages.confirmation | manifest.pages.required[10]
+    check: "app/confirmation/page.tsx renders confirmation content object
+      (Confirmation, OrderNumber, ContinueShopping) — HTTP 200"
+  - id: search
+    route: /search
+    source: sitemap.core_pages.search | manifest.pages.required[11]
+    check: "app/search/page.tsx renders search content object (SearchBar,
+      Results, NoResults) — HTTP 200"
+  - id: support
+    route: /support
+    source: sitemap.core_pages.support | manifest.pages.required[12]
+    check: "app/support/page.tsx renders support content object (Hero,
+      ContactMethods, Articles, ServiceOverview) — HTTP 200"
+  - id: not_found
+    route: /not-found
+    source: sitemap.core_pages.not_found | manifest.pages.required[13]
+    check: "app/not-found/page.tsx renders notFound content object (Message,
+      NavigationCta) — HTTP 200"
+
+  # --- ADDITIONAL PAGES (manifest pages.additional — must exist and render) ---
+  - id: wishlist
+    route: /wishlist
+    source: sitemap.additional_pages.wishlist | manifest.pages.additional[0]
+    check: "app/wishlist/page.tsx renders wishlist content object (Hero, Grid) — HTTP 200"
+  - id: account
+    route: /account
+    source: sitemap.additional_pages.account | manifest.pages.additional[1]
+    check: "app/account/page.tsx renders account content object (AccountNav,
+      Orders, Profile, Addresses) — HTTP 200"
+  - id: order_tracking
+    route: /order-tracking
+    source: sitemap.additional_pages.order_tracking | manifest.pages.additional[2]
+    check: "app/order-tracking/page.tsx renders orderTracking content object
+      (Hero, OrderNumber, Email, History) — HTTP 200"
+  - id: store_locator
+    route: /store-locator
+    source: sitemap.additional_pages.store_locator | manifest.pages.additional[3]
+    check: "app/store-locator/page.tsx renders storeLocator content object
+      (Hero, Grid) — HTTP 200"
+  - id: faq
+    route: /faq
+    source: sitemap.additional_pages.faq | manifest.pages.additional[4]
+    check: "app/faq/page.tsx renders faq content object (Hero, Grid) — HTTP 200"
+  - id: reviews
+    route: /reviews
+    source: sitemap.additional_pages.reviews | manifest.pages.additional[5]
+    check: "app/reviews/page.tsx renders reviews content object (Hero, List) — HTTP 200"
+  - id: blog
+    route: /blog
+    source: sitemap.additional_pages.blog | manifest.pages.additional[6]
+    check: "app/blog/page.tsx renders blog content object (Hero, ArticleList) — HTTP 200"
+  - id: privacy
+    route: /privacy
+    source: sitemap.additional_pages.privacy | manifest.pages.additional[7]
+    check: "app/privacy/page.tsx renders privacy content object (Header, Body) — HTTP 200"
+  - id: terms
+    route: /terms
+    source: sitemap.additional_pages.terms | manifest.pages.additional[8]
+    check: "app/terms/page.tsx renders terms content object (Header, Body) — HTTP 200"
+  - id: returns
+    route: /returns
+    source: sitemap.additional_pages.returns | manifest.pages.additional[9]
+    check: "app/returns/page.tsx renders returns content object (Header, Body) — HTTP 200"
+
+  # --- GLOBAL LAYOUT (sitemap.global_layout — applied to all pages) ---
+  - id: global_layout
+    source: sitemap.global_layout.header | sitemap.global_layout.footer
+    check: "app/layout.tsx renders <Footer/> on every page; metadata derives
+      from site.metadata (title template '%s | E2'); NavBar renders site.nav;
+      Footer renders site.footer columns + legal links; no page 404s"
+
+---
+# ===========================================================================
+# 2. CONTENT
+# Trace: template.intake.schema.yaml (destinations), template.content.mapping.json
+# ===========================================================================
+
+content:
+  # --- MAPPING VALIDITY (template.content.mapping.json) ---
+  - check: "template.content.mapping.json has 133 entries; each entry has all
+    five fields populated: source, destination, content_object, react_component,
+    page_location — source: mapping file (133 entries)"
+  - check: "Every destination resolves against app/content exports — verified
+    by `node scripts/validate-content.mjs` exiting 0: 'All 127 mapped intake
+    fields have a content destination.' — source: intake schema destinations"
+  - check: "Every source field_id matches a field_id in
+    template.intake.schema.yaml (e.g. hero_title → Home.Hero.heading,
+    product_title → Product.Info.title) — source: intake schema"
+  - check: "No mapping has undefined ${intake.<field>} references in
+    content_object — source: content mapping"
+  - check: "No orphan content: every content object exported from app/content/
+    (27 objects) maps to at least one mapped destination or a page —
+    source: content mapping + app/content/index.ts"
+
+  # --- CONTENT OBJECT STRUCTURE (intake destinations) ---
+  - check: "Content objects use PascalCase page/section keys and camelCase
+    fields matching intake destinations (Home.Hero.heading, Product.Info.price,
+    Cart.CartSummary.subtotal) — source: intake schema destination format"
+  - check: "Asset fields flow through assetImage() (src + alt) so URLs and
+    alt text are swappable per client — source: intake schema url/type fields"
+  - check: "Legal pages (privacy/terms/returns) and the `legal` root resolve
+    Legal.Header.title, Legal.Header.subtitle, Legal.Body.content —
+    source: intake schema privacy/terms/returns destinations"
+  - check: "Price fields are numbers and render via formatPrice() —
+    source: intake schema type:number fields"
+
+  # --- INTAKE COVERAGE SAMPLES (required fields must be present) ---
+  - field: hero_title
+    schema_destination: Home.Hero.heading
+    mapping_present: true
+    check: "Mapping entry exists with source:intake.hero_title,
+      destination:Home.Hero.heading — source: intake schema (required: true)"
+  - field: hero_image
+    schema_destination: Home.Hero.image
+    mapping_present: true
+    check: "Mapping entry exists — source: intake schema (required: true)"
+  - field: product_title
+    schema_destination: Product.Info.title
+    mapping_present: true
+    check: "Mapping entry exists — source: intake schema (required: true)"
+  - field: product_price
+    schema_destination: Product.Info.price
+    mapping_present: true
+    check: "Mapping entry exists — source: intake schema (required: true)"
+  - field: cart_subtotal
+    schema_destination: Cart.CartSummary.subtotal
+    mapping_present: true
+    check: "Mapping entry exists — source: intake schema (required: true)"
+  - field: not_found_message
+    schema_destination: NotFound.Message
+    mapping_present: true
+    check: "Mapping entry exists — source: intake schema (required: true)"
+  - field: continue_shopping_cta_text
+    schema_destination: Confirmation.ContinueShopping.cta
+    mapping_present: true
+    check: "Mapping entry exists — source: intake schema (required: true)"
+  - field: comparison_specs_table
+    schema_destination: Comparison.KeySpecs.table
+    mapping_present: true
+    check: "Mapping entry exists — source: intake schema (required: true)"
+  - check: "No required intake field from template.intake.schema.yaml lacks a
+    mapping entry (spot-check all required:true fields across 24 pages) —
+    source: intake schema required flags"
+
+---
+# ===========================================================================
+# 3. DESIGN
+# Trace: template/design/design-tokens.yaml
+# ===========================================================================
+
+design:
+  # --- TOKEN CATEGORIES (design-tokens.yaml sections) ---
+  - check: "colors section defines the 10-color role structure
+    (background, foreground, card, primary, primary-foreground, secondary,
+    secondary-foreground, accent, accent-foreground, muted, muted-foreground,
+    border, ring) — source: design-tokens.yaml colors"
+  - check: "typography section defines font families (Inter sans + Georgia
+    serif) and scales (font-size, line-height, font-weight) —
+    source: design-tokens.yaml typography"
+  - check: "spacing section defines the spacing scale — source:
+    design-tokens.yaml spacing"
+  - check: "border-radius defines sm/md/lg/xl/2xl levels — source:
+    design-tokens.yaml radius"
+  - check: "shadows defines sm/md/lg/inner — source: design-tokens.yaml shadows"
+  - check: "breakpoints defines sm 640px / md 768px / lg 1024px / xl 1280px /
+    2xl 1536px — source: design-tokens.yaml breakpoints"
+  - check: "motion defines transition-base, transition-fast, transition-slow,
+    transition-curve, hover-scale, hover-opacity — source: design-tokens.yaml motion"
+
+  # --- CSS IMPLEMENTATION (app/globals.css) ---
+  - check: "All CSS custom properties in app/globals.css (28 tokens:
+    --color-*, --font-*, --radius-*, --shadow-*, --transition-*, --hover-*)
+    match design-tokens.yaml css-properties values (e.g. --color-primary
+    #0071E3, --color-background #FFFFFF) — source: design-tokens.yaml"
+  - check: "No orphan token: every token in design-tokens.yaml css-properties
+    has a matching declaration in app/globals.css — source: design-tokens.yaml"
+  - check: "Components reference tokens via Tailwind v4 utilities or CSS
+    variables; no hardcoded hex values diverge from the token palette —
+    source: design-tokens.yaml"
+
+  # --- VISUAL/ACCESSIBILITY APPLICATION (SOP-07/SOP-08) ---
+  - check: "Responsive: pages render at all 5 breakpoints without horizontal
+    overflow (hero stacks ≤640px, grids reflow 5→2→1 columns) —
+    source: design-tokens.yaml breakpoints"
+  - check: "WCAG AA contrast: #111111 on #FFFFFF (21:1 ✓); primary #0071E3
+    used as button bg with white text at 3:1 (UI component threshold);
+    muted #6E6E73 meets 4.5:1 on white where used for body text —
+    source: design-tokens.yaml colors"
+  - check: "Focus rings: --color-ring (#0071E3) applied to interactive
+    elements (buttons, inputs, links) — source: design-tokens.yaml ring"
+  - check: "All images carry meaningful alt text via assetImage() alt field —
+    source: intake schema url fields + design tokens"
+
+---
+# ===========================================================================
+# 4. FUNCTIONALITY
+# Trace: sitemap.yaml (page sections), brief assumptions (prototype scope)
+# ===========================================================================
+
+functionality:
+  # --- NAVIGATION (sitemap routes + global_layout) ---
+  - check: "NavBar renders site.nav items and every header link resolves
+    without 404 — source: sitemap core_pages routes + site content object"
+  - check: "Footer columns (Shop and Learn, Account, Support, Company) and
+    legal links (Privacy, Terms, Returns) resolve — source: sitemap
+    global_layout.footer + site content object"
+  - check: "All 24 app routes return HTTP 200 under `next start` including
+    dynamic samples /shop/smartphones and /product/iphone-15-pro —
+    source: sitemap routes"
+
+  # --- CATALOG (sitemap shop/category/product sections) ---
+  - check: "Shop page renders ProductGrid from shop content; category page
+    reflects URL slug in title; product page renders Gallery/Info/Features/
+    Related from product content — source: sitemap shop, category, product"
+  - check: "Cart page renders items + summary from cart content (subtotal,
+    shipping, total via formatPrice) — source: sitemap cart sections"
+
+  # --- PROTOTYPE FLOWS (brief assumption #1 — front-end prototypes) ---
+  - check: "Checkout is a prototype: captures customer info/shipping/payment
+    UI fields, shows order review with zero-item prototype state, and displays
+    'Prototype: No live payment processing enabled' — source: brief assumption
+    #1 + sitemap checkout.payment purpose"
+  - check: "Confirmation page shows order number placeholder and Continue
+    Shopping CTA — source: sitemap confirmation sections"
+  - check: "Account/order-tracking/wishlist/store-locator render prototype
+    states (no live data/backend) — source: brief assumption #1 + sitemap
+    additional_pages sections"
+  - check: "Search page shows query echo, results list from search content,
+    and no-results message — source: sitemap search sections"
+  - check: "No live payment, inventory, order-persistence, or account API
+    exists anywhere in the app (deferred scope respected) — source: brief
+    assumptions #1/#10"
+
+  # --- FORMS & INTERACTION (sitemap sections) ---
+  - check: "Newsletter form (home) renders title, placeholder, and CTA from
+    home content — source: sitemap home newsletter section + intake fields"
+  - check: "FAQ uses accessible <details>/<summary> accordion — source:
+    sitemap faq.faq_grid"
+  - check: "Interactive components (button, cta, navbar) are client components
+    ('use client'); everything else is a Server Component — source: SOP §5"
+
+---
+# ===========================================================================
+# 5. EXTENSIONS
+# Trace: template.extensions.yaml (approved set), template.manifest.yaml
+#        (supported_extensions), template/template.agent.instructions.md
+# ===========================================================================
+
+extensions:
+  # --- APPROVED SET (manifest supported_extensions + extensions.yaml) ---
+  - check: "Only approved extensions are referenced: content (required),
+    design (required), cart_checkout (recommended), account (recommended),
+    analytics (optional) — source: template.extensions.yaml classifications +
+    manifest supported_extensions"
+  - check: "Unapproved support extension is NOT referenced in
+    template.extensions.yaml and has no implementation — source: extensions
+    classification (restricted/excluded)"
+  - check: "Every hook named in template.extensions.yaml has a corresponding
+    type in app/extensions/types.ts (ExtensionHook union) — source:
+    extensions.yaml hooks"
+
+  # --- INTEGRATION POINTS (Phase 5 layer) ---
+  - check: "app/extensions/ contains types.ts, registry.ts, config.ts,
+    slots.tsx, _prepare.ts, index.ts — source: agent instructions §Services"
+  - check: "extensionConfig in config.ts exposes typed, inert defaults for
+    each approved extension (all disabled/empty) — source: extensions.yaml"
+  - check: "15 named slots exist in slots.tsx (HeadSlot, BodyStartSlot,
+    BodyEndSlot, BrandLogoSlot, NavbarActionsSlot, HeroCampaignSlot,
+    HomeServicesSlot, FooterDataSlot, CategoryFiltersSlot, ProductInfoSlot,
+    CartSummarySlot, CheckoutFlowSlot, AccountNavSlot, OrderHistorySlot,
+    ProfileEditSlot) plus ExtensionSlot — source: extensions.yaml hooks"
+  - check: "Slots are wired: layout (Head/BodyStart/BodyEnd), navbar
+    (BrandLogo/NavbarActions), footer (FooterData), home (HeroCampaign/
+    HomeServices), shop + category (CategoryFilters), product (ProductInfo),
+    cart (CartSummary), checkout (CheckoutFlow), account (AccountNav/
+    OrderHistory/ProfileEdit) — source: extensions.yaml hook mapping"
+  - check: "Every slot renders null when no extension is registered (template
+    ships with zero extensions implemented) — source: extensions.yaml
+    placeholder-only rule"
+
+  # --- NON-IMPLEMENTATION GATE (agent instructions rule) ---
+  - check: "No extension behavior implemented: no analytics scripts, no
+    consent UI, no cart provider, no payment SDK, no account API —
+    source: extensions.yaml 'do not define implementation details' + agent
+    instructions §Services Forbidden"
+  - check: "extensionConfig values remain at defaults; only EKOMS per-client
+    builds may populate them — source: agent instructions §Services"
+  - check: "app/extensions/_prepare.ts is the documented EKOMS mount point
+    and is imported once from app/layout.tsx — source: agent instructions
+    §Services Expected Output"
+  - check: "app/extensions/ compiles; build passes with extension layer
+    imported — source: SOP §3.4"
+
+---
+# ===========================================================================
+# 6. TECHNICAL REQUIREMENTS
+# Trace: template.manifest.yaml (stack, version), SOP (build instructions)
+# ===========================================================================
+
+technical:
+  # --- STACK (manifest stack) ---
+  - check: "package.json declares next 16.3.1, react 19.2.8, typescript ^5,
+    tailwindcss ^4, clsx — source: manifest stack section"
+  - check: "Path alias @/* → ./app/* configured in tsconfig.json —
+    source: manifest stack + SOP §1.2"
+
+  # --- BUILD & VERIFICATION (SOP §3) ---
+  - check: "`node scripts/validate-content.mjs` exits 0 (127/127 destinations)
+    — source: SOP §3.3"
+  - check: "`npx next build` succeeds: compiled, TypeScript passes, 25 routes
+    emitted (23 static + 2 dynamic) — source: SOP §3.4"
+  - check: "`npx next start` serves HTTP 200 on all 24 checked routes —
+    source: SOP §3.5"
+  - check: "`npm run lint` passes with zero errors — source: SOP §3.7"
+
+  # --- VERSION CONSISTENCY (SOP §6.9 + manifest) ---
+  - check: "template.manifest.yaml version = 1.0.0 — source: manifest"
+  - check: "template.intake.schema.yaml schema_version = 1.0.0 — source: intake schema"
+  - check: "template.content.mapping.json version = 1.0.0 — source: content mapping"
+  - check: "package.json version = 0.1.0 (implementation reference) — source: package.json"
+  - check: "No version mismatches across artifacts — source: SOP §6"
+
+  # --- CODE QUALITY (SOP §6 + agent instructions) ---
+  - check: "No client-specific content hardcoded in pages/components; all
+    copy/assets flow through content objects and assetImage() — source:
+    manifest objective + SOP §6.5"
+  - check: "Every react_component referenced in the content mapping exists
+    as a typed .tsx file in app/components/ — source: content mapping
+    react_component values"
+  - check: "Dynamic routes type their params: app/product/[id]/page.tsx and
+    app/shop/[category]/page.tsx — source: SOP §2.2"
+  - check: "No orphan empty component directories shadow real components
+    (button/, container/, cta/, footer/, gallery/, hero/, navbar/,
+    service-section/, testimonials/, typography/ are empty and unused) —
+    source: SOP §1.3 component inventory"
+  - check: "next.config.ts images.remotePatterns allows images.unsplash.com;
+    no invalid config keys — source: SOP §2.4"
+
+---
+# ===========================================================================
+# SUMMARY
+# ===========================================================================
+
+status: pending_execution
+passed: 0
+failed: 0
+notes: |
+  Execute in order: `node scripts/validate-content.mjs` → `npx next build` →
+  `npx next start` + HTTP 200 route sweep → verify each check above, updating
+  status per check. All checks trace to sitemap.yaml, template.intake.schema.yaml,
+  template.manifest.yaml, or template.extensions.yaml as cited. Upon all checks
+  passing, the template package is complete and ready for Factory Console
+  registration and Build Card generation.
+
+--- END OF QA CHECKLIST ---

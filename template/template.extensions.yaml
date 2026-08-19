@@ -1,0 +1,113 @@
+# Build It Factory — Template Extensions
+# Phase 8 — Extension priority classification for approved EKOMS extensions.
+# Template: ELEC-PREIMIUM-ELECTRONICS-B5 | E2 – Premium Electronics & Accessories
+#
+# Only extensions approved via template.manifest.yaml are referenced.
+# Each extension is classified as Required / Recommended / Optional / Restricted,
+# with a reason grounded in the template objective (reusable, intake-configurable
+# storefront focused on product discovery and purchase conversion).
+# Implementation details are intentionally omitted; EKOMS module binding follows
+# the naming conventions provided in future prompts.
+
+extensions:
+  # ---------------------------------------------------------------------------
+  # REQUIRED
+  # ---------------------------------------------------------------------------
+  - name: content
+    classification: required
+    reason: >
+      The template objective mandates a storefront that is fully configurable
+      through an intake schema with no client-specific content baked in.
+      Content injection (brand identity, categories, products, hero campaign,
+      services, footer data) is the mechanism that turns the generic template
+      into a distinct client build. Without it the template cannot be
+      delivered to any client.
+    hooks:
+      - brand_identity
+      - category_data
+      - product_data
+      - hero_campaign
+      - services_data
+      - footer_data
+
+  - name: design
+    classification: required
+    reason: >
+      The objective requires a generalized, token-driven design system with no
+      brand-specific colors or typography baked into the template. Per-client
+      theming (color palette, typography scale, spacing scale, motion) is the
+      only approved path to branded output, so design-token overrides are
+      required for any client deliverable.
+    hooks:
+      - color_palette
+      - typography_scale
+      - spacing_scale
+      - motion_customization
+
+  # ---------------------------------------------------------------------------
+  # RECOMMENDED
+  # ---------------------------------------------------------------------------
+  - name: cart_checkout
+    classification: recommended
+    reason: >
+      The template's primary goal is online purchase conversion, and cart and
+      checkout are core website capabilities. They ship as front-end prototypes
+      in Phase 1 with no payment or order backend, so the cart/checkout
+      extension is recommended to complete the conversion flow once a commerce
+      backend is specified.
+    hooks:
+      - cart_prototype
+      - checkout_prototype
+      - inventory_sync
+      - payment_integration
+
+  - name: account
+    classification: recommended
+    reason: >
+      The account area (order history, profile, addresses) is a required
+      website capability, but it is front-end state only for Phase 1 and its
+      backend wiring is deferred. The account extension is recommended once
+      authenticated account services are available.
+    hooks:
+      - account_navigation
+      - order_history
+      - profile_management
+      - addresses_sync
+
+  # ---------------------------------------------------------------------------
+  # OPTIONAL
+  # ---------------------------------------------------------------------------
+  - name: analytics
+    classification: optional
+    reason: >
+      Page-view and event tracking is not required to deliver the storefront
+      or complete purchase conversion. Clients opt in when measurement and
+      consent tooling is needed, so analytics is an optional extension that
+      attaches when a client requests it.
+    hooks:
+      - ga_integration
+      - consent_management
+      - ekomis_analytics
+
+# ---------------------------------------------------------------------------
+# RESTRICTED (NOT REFERENCED)
+# ---------------------------------------------------------------------------
+# The support extension is NOT an approved EKOMS extension: it is absent from
+# template.manifest.yaml supported_extensions and has no approved hooks.
+# Per the "reference approved extensions only" rule, it is excluded from the
+# list above. Its integration points are deferred until EKOMS / Factory Console
+# naming conventions define an approved contract.
+#
+# Excluded: support (hooks: [])
+
+# ---------------------------------------------------------------------------
+# RULE COMPLIANCE
+# ---------------------------------------------------------------------------
+# - Only extensions approved via template.manifest.yaml are referenced
+#   (content, design, analytics, cart_checkout, account). The unapproved
+#   support extension is excluded and documented under RESTRICTED.
+# - Classification order: Required (content, design) → Recommended
+#   (cart_checkout, account) → Optional (analytics).
+# - No implementation details are defined here; EKOMS module binding is
+#   deferred per Phase 0 assumption #11 and resolved in future prompts.
+# ---------------------------------------------------------------------------

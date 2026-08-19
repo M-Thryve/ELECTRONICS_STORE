@@ -1,0 +1,1160 @@
+# Build It Factory — Template Intake Schema
+# Feeds the Build It Intake Form. Derived from sitemap.yaml and template.manifest.yaml.
+# Every required React content location has a corresponding intake source.
+# Unnecessary fields are avoided; only required information is collected.
+
+schema_version: 1.0.0
+description: >
+  Intake schema for the ELEC-PREIMIUM-ELECTRONICS-B5 template (E2 – Premium Electronics & Accessories).
+  Maps client-provided data to page sections across all 25 sitemap pages.
+  Destination format follows the example: <PagePascalCase>.<SectionPascalCase>.<field>.
+
+pages:
+
+  home:
+    hero:
+      - field_id: hero_title
+        field_name: Hero Title
+        type: string
+        required: true
+        purpose: The main heading on the home page
+        destination: Home.Hero.heading
+      - field_id: hero_subtitle
+        field_name: Hero Subtitle
+        type: string
+        required: false
+        purpose: Subheading under the hero title
+        destination: Home.Hero.subheading
+      - field_id: hero_image
+        field_name: Hero Image
+        type: url
+        required: true
+        purpose: Main hero background image URL
+        destination: Home.Hero.image
+      - field_id: cta_primary_text
+        field_name: Primary CTA Text
+        type: string
+        required: true
+        purpose: Primary call-to-action button label
+        destination: Home.Hero.cta_primary
+      - field_id: cta_primary_url
+        field_name: Primary CTA URL
+        type: string
+        required: true
+        purpose: Link destination for primary CTA
+        destination: Home.Hero.cta_url
+      - field_id: secondary_cta_text
+        field_name: Secondary CTA Text
+        type: string
+        required: false
+        purpose: Secondary link label (e.g. "Explore Products")
+        destination: Home.Hero.cta_secondary
+      - field_id: secondary_cta_url
+        field_name: Secondary CTA URL
+        type: string
+        required: false
+        purpose: Link destination for secondary CTA
+        destination: Home.Hero.cta_secondary_url
+      - field_id: lifestyle_editorial_title
+        field_name: Lifestyle Editorial Title
+        type: string
+        required: true
+        purpose: Title for the lifestyle/editorial section
+        destination: Home.LifestyleEditorial.title
+      - field_id: lifestyle_editorial_image
+        field_name: Lifestyle Editorial Image
+        type: url
+        required: true
+        purpose: Hero image for the lifestyle section
+        destination: Home.LifestyleEditorial.image
+      - field_id: customer_benefits_title
+        field_name: Customer Benefits Title
+        type: string
+        required: true
+        purpose: Title reinforcing trust (warranty, support, policies)
+        destination: Home.CustomerBenefits.title
+      - field_id: support_section_title
+        field_name: Support Section Title
+        type: string
+        required: true
+        purpose: Title for the support section
+        destination: Home.SupportSection.title
+      - field_id: newsletter_title
+        field_name: Newsletter Title
+        type: string
+        required: false
+        purpose: Title above the newsletter form
+        destination: Home.Newsletter.title
+      - field_id: newsletter_cta_text
+        field_name: Newsletter CTA Text
+        type: string
+        required: true
+        purpose: Primary button text for subscription
+        destination: Home.Newsletter.cta
+      - field_id: newsletter_placeholder_email
+        field_name: Newsletter Email Placeholder
+        type: string
+        required: false
+        purpose: Placeholder text in the email input field
+        destination: Home.Newsletter.placeholder
+      - field_id: footer_nav_home
+        field_name: Footer Nav Home
+        type: string
+        required: false
+        purpose: Label for "Home" link in footer
+        destination: Home.FooterNav.home
+      - field_id: footer_nav_terms
+        field_name: Footer Nav Terms
+        type: string
+        required: false
+        purpose: Label for "Terms" link in footer
+        destination: Home.FooterNav.terms
+      - field_id: footer_nav_privacy
+        field_name: Footer Nav Privacy
+        type: string
+        required: false
+        purpose: Label for "Privacy" link in footer
+        destination: Home.FooterNav.privacy
+
+    shop_by_category:
+      - field_id: category_filter_title
+        field_name: Category Filter Title
+        type: string
+        required: false
+        purpose: Title above the category grid
+        destination: Home.ShopByCategory.title
+      - field_id: category_filter_subtitle
+        field_name: Category Filter Subtitle
+        type: string
+        required: false
+        purpose: Subtitle describing category navigation
+        destination: Home.ShopByCategory.subtitle
+
+    editorial_banner:
+      - field_id: banner_title
+        field_name: Banner Title
+        type: string
+        required: true
+        purpose: Title of the editorial highlight
+        destination: Home.EditorialBanner.title
+      - field_id: banner_image
+        field_name: Banner Image
+        type: url
+        required: true
+        purpose: Hero image for the editorial banner
+        destination: Home.EditorialBanner.image
+      - field_id: banner_cta_text
+        field_name: Banner CTA Text
+        type: string
+        required: true
+        purpose: Call-to-action text for the banner
+        destination: Home.EditorialBanner.cta
+      - field_id: banner_cta_url
+        field_name: Banner CTA URL
+        type: string
+        required: true
+        purpose: Link destination for banner CTA
+        destination: Home.EditorialBanner.cta_url
+
+    featured_products:
+      - field_id: featured_product_highlight_title
+        field_name: Featured Product Highlight Title
+        type: string
+        required: false
+        purpose: Optional title for a single highlighted product
+        destination: Home.FeaturedProducts.highlight_title
+      - field_id: featured_product_highlight_cta
+        field_name: Featured Product Highlight CTA
+        type: string
+        required: false
+        purpose: CTA for the highlighted product
+        destination: Home.FeaturedProducts.highlight_cta
+
+    product_categories:
+      - field_id: category_filter_title
+        field_name: Category Filter Title
+        type: string
+        required: false
+        purpose: Title above the category grid
+        destination: Home.ProductCategories.title
+      - field_id: category_filter_subtitle
+        field_name: Category Filter Subtitle
+        type: string
+        required: false
+        purpose: Subtitle describing category navigation
+        destination: Home.ProductCategories.subtitle
+
+    new_arrivals:
+      - field_id: new_arrivals_title
+        field_name: New Arrivals Title
+        type: string
+        required: true
+        purpose: Title for the new arrivals section
+        destination: Home.NewArrivals.title
+      - field_id: new_arrivals_cta_text
+        field_name: New Arrivals CTA Text
+        type: string
+        required: true
+        purpose: CTA text for "Shop New Arrivals"
+        destination: Home.NewArrivals.cta
+
+  shop:
+    page_header:
+      - field_id: page_title
+        field_name: Page Title
+        type: string
+        required: true
+        purpose: Main heading for the shop catalog page
+        destination: Shop.PageHeader.title
+      - field_id: page_subtitle
+        field_name: Page Subtitle
+        type: string
+        required: false
+        purpose: Subtitle describing the catalog
+        destination: Shop.PageHeader.subtitle
+
+    catalog_filters:
+      - field_id: filter_title
+        field_name: Filter Title
+        type: string
+        required: false
+        purpose: Title above filter controls
+        destination: Shop.CatalogFilters.title
+      - field_id: price_min
+        field_name: Minimum Price
+        type: number
+        required: false
+        purpose: Lower bound for price filtering
+        destination: Shop.CatalogFilters.price_min
+      - field_id: price_max
+        field_name: Maximum Price
+        type: number
+        required: false
+        purpose: Upper bound for price filtering
+        destination: Shop.CatalogFilters.price_max
+
+    product_grid:
+      - field_id: product_grid_caption
+        field_name: Product Grid Caption
+        type: string
+        required: false
+        purpose: Optional caption above the product grid
+        destination: Shop.ProductGrid.caption
+
+    pagination:
+      - field_id: pagination_label
+        field_name: Pagination Label
+        type: string
+        required: false
+        purpose: Accessible label for product grid pagination
+        destination: Shop.Pagination.label
+
+  category:
+    category_hero:
+      - field_id: category_title
+        field_name: Category Title
+        type: string
+        required: true
+        purpose: Name of the selected category
+        destination: Category.Hero.title
+      - field_id: category_description
+        field_name: Category Description
+        type: string
+        required: false
+        purpose: Brief description of the category
+        destination: Category.Hero.description
+      - field_id: category_image
+        field_name: Category Image
+        type: url
+        required: false
+        purpose: Hero image representing the category
+        destination: Category.Hero.image
+
+    catalog_filters_1:
+      - field_id: filter_title_1
+        field_name: Filter Title
+        type: string
+        required: false
+        purpose: Title above filter controls for this category
+        destination: Category.CatalogFilters.title
+      - field_id: price_min_1
+        field_name: Minimum Price
+        type: number
+        required: false
+        purpose: Lower bound for price filtering within category
+        destination: Category.CatalogFilters.price_min
+      - field_id: price_max_1
+        field_name: Maximum Price
+        type: number
+        required: false
+        purpose: Upper bound for price filtering within category
+        destination: Category.CatalogFilters.price_max
+
+    product_grid_1:
+      - field_id: product_grid_caption_1
+        field_name: Product Grid Caption
+        type: string
+        required: false
+        purpose: Optional caption above the product grid for this category
+        destination: Category.ProductGrid.caption
+
+    pagination_1:
+      - field_id: pagination_label_1
+        field_name: Pagination Label
+        type: string
+        required: false
+        purpose: Accessible label for category product grid pagination
+        destination: Category.Pagination.label
+
+  product:
+    gallery:
+      - field_id: product_gallery_images
+        field_name: Product Gallery Images
+        type: array
+        required: true
+        purpose: URLs of product imagery, rendered as a carousel/gallery
+        destination: Product.Gallery.images
+      - field_id: product_gallery_alt_text
+        field_name: Product Gallery Alt Text
+        type: string
+        required: false
+        purpose: Alt text for primary product image; defaults if omitted
+        destination: Product.Gallery.alt_text
+
+    product_info:
+      - field_id: product_title
+        field_name: Product Title
+        type: string
+        required: true
+        purpose: The product name displayed above the price/description
+        destination: Product.Info.title
+      - field_id: product_price
+        field_name: Product Price
+        type: number
+        required: true
+        purpose: The displayed sale price
+        destination: Product.Info.price
+      - field_id: product_compare_at_price
+        field_name: Product Compare-at Price
+        type: number
+        required: false
+        purpose: Original retail price (struck-through), for discount messaging
+        destination: Product.Info.compare_at_price
+      - field_id: product_sku
+        field_name: Product SKU
+        type: string
+        required: false
+        purpose: Stock-keeping unit for inventory/reference
+        destination: Product.Info.sku
+      - field_id: product_description
+        field_name: Product Description
+        type: string
+        required: true
+        purpose: Detailed product description copy
+        destination: Product.Info.description
+      - field_id: product_variant_label
+        field_name: Product Variant Label
+        type: string
+        required: false
+        purpose: Label for size/color selector (e.g. "Select Size")
+        destination: Product.Info.variant_label
+
+    product_features:
+      - field_id: product_features_title
+        field_name: Product Features Title
+        type: string
+        required: false
+        purpose: Title for the features specification section
+        destination: Product.Features.title
+      - field_id: product_feature_bullets
+        field_name: Product Feature Bullets
+        type: array
+        required: false
+        purpose: Key specification bullets (material, care, dimensions)
+        destination: Product.Features.bullets
+
+    related_products:
+      - field_id: related_products_count
+        field_name: Related Products Count
+        type: number
+        required: false
+        purpose: Number of related products to display below the main product
+        destination: Product.Related.count
+
+  comparison:
+    product_selection:
+      - field_id: comparison_product_names
+        field_name: Comparison Product Names
+        type: array
+        required: true
+        purpose: Names of products being compared
+        destination: Comparison.ProductSelection.names
+      - field_id: comparison_product_images
+        field_name: Comparison Product Images
+        type: array
+        required: true
+        purpose: Image URLs for each compared product
+        destination: Comparison.ProductSelection.images
+    product_images:
+      - field_id: comparison_detail_images
+        field_name: Comparison Detail Images
+        type: array
+        required: true
+        purpose: Detailed product images for side-by-side comparison
+        destination: Comparison.ProductImages.detail
+    key_specs:
+      - field_id: comparison_specs_table
+        field_name: Comparison Specs Table
+        type: string
+        required: true
+        purpose: HTML or structured table of key specifications
+        destination: Comparison.KeySpecs.table
+    features:
+      - field_id: comparison_feature_checklist
+        field_name: Feature Feature Checklist
+        type: array
+        required: true
+        purpose: Checklist of features compared (performance, connectivity, etc.)
+        destination: Comparison.Features.checklist
+    purchase_cta:
+      - field_id: comparison_purchase_cta_label
+        field_name: Comparison Purchase CTA Label
+        type: string
+        required: true
+        purpose: Primary CTA label for purchasing a compared product
+        destination: Comparison.PurchaseCta.label
+
+  collections:
+    collections_hero:
+      - field_id: collections_hero_title
+        field_name: Collections Hero Title
+        type: string
+        required: true
+        purpose: Title for the collections section
+        destination: Collections.Hero.title
+      - field_id: collections_hero_image
+        field_name: Collections Hero Image
+        type: url
+        required: true
+        purpose: Main visual anchor for the collections section
+        destination: Collections.Hero.image
+    collection_grid:
+      - field_id: collection_grid_caption
+        field_name: Collection Grid Caption
+        type: string
+        required: false
+        purpose: Optional caption above the collection grid
+        destination: Collections.Grid.caption
+    featured_collection:
+      - field_id: featured_collection_title
+        field_name: Featured Collection Title
+        type: string
+        required: true
+        purpose: Title of the spotlighted featured collection
+        destination: Collections.FeaturedCollection.title
+      - field_id: featured_collection_image
+        field_name: Featured Collection Image
+        type: url
+        required: false
+        purpose: Hero image for the featured collection
+        destination: Collections.FeaturedCollection.image
+
+  deals:
+    deals_hero:
+      - field_id: deals_hero_title
+        field_name: Deals Hero Title
+        type: string
+        required: true
+        purpose: Headline and visual anchor for deal pricing
+        destination: Deals.Hero.title
+      - field_id: deals_hero_image
+        field_name: Deals Hero Image
+        type: url
+        required: false
+        purpose: Optional hero image for the deals section
+        destination: Deals.Hero.image
+    deal_cards:
+      - field_id: deal_cards_caption
+        field_name: Deal Cards Caption
+        type: string
+        required: false
+        purpose: Optional caption above the deal cards grid
+        destination: Deals.Grid.caption
+    promotion_banner:
+      - field_id: promotion_banner_title
+        field_name: Promotion Banner Title
+        type: string
+        required: true
+        purpose: Broad promotional banner title for store-wide offers
+        destination: Deals.PromotionBanner.title
+
+  accessories:
+    accessories_hero:
+      - field_id: accessories_hero_title
+        field_name: Accessories Hero Title
+        type: string
+        required: true
+        purpose: Heading and introductory text for the accessories category
+        destination: Accessories.Hero.title
+      - field_id: accessories_hero_image
+        field_name: Accessories Hero Image
+        type: url
+        required: false
+        purpose: Optional hero image for the accessories section
+        destination: Accessories.Hero.image
+    accessory_grid:
+      - field_id: accessory_grid_caption
+        field_name: Accessory Grid Caption
+        type: string
+        required: false
+        purpose: Optional caption above the accessory grid
+        destination: Accessories.Grid.caption
+    compatibility_notes:
+      - field_id: compatibility_notes_text
+        field_name: Compatibility Notes Text
+        type: string
+        required: true
+        purpose: Text describing compatibility across product lines
+        destination: Accessories.CompatibilityNotes.text
+
+  cart:
+    cart_items:
+      - field_id: cart_subtitle
+        field_name: Cart Subtitle
+        type: string
+        required: false
+        purpose: Subtitle/context line above the cart item list
+        destination: Cart.CartItems.subtitle
+      - field_id: cart_summary_subtitle
+        field_name: Cart Summary Subtitle
+        type: string
+        required: true
+        purpose: Label for the order total summary
+        destination: Cart.CartItems.summary_subtitle
+    cart_summary:
+      - field_id: cart_subtotal
+        field_name: Cart Subtotal
+        type: number
+        required: true
+        purpose: Pre-tax, pre-shipping total of items in the cart
+        destination: Cart.CartSummary.subtotal
+      - field_id: cart_shipping
+        field_name: Cart Shipping
+        type: number
+        required: false
+        purpose: Shipping cost added to subtotal
+        destination: Cart.CartSummary.shipping
+      - field_id: cart_total
+        field_name: Cart Total
+        type: number
+        required: true
+        purpose: Final sum of subtotal + shipping
+        destination: Cart.CartSummary.total
+
+  checkout:
+    customer_info:
+      - field_id: customer_title
+        field_name: Customer Info Title
+        type: string
+        required: true
+        purpose: Heading for the customer information section
+        destination: Checkout.CustomerInfo.title
+      - field_id: customer_name_field
+        field_name: Customer Name Field Label
+        type: string
+        required: false
+        purpose: Label for the name input
+        destination: Checkout.CustomerInfo.name_field_label
+      - field_id: customer_email_field
+        field_name: Customer Email Field Label
+        type: string
+        required: false
+        purpose: Label for the email input
+        destination: Checkout.CustomerInfo.email_field_label
+    shipping:
+      - field_id: shipping_title
+        field_name: Shipping Title
+        type: string
+        required: true
+        purpose: Heading for the shipping address section
+        destination: Checkout.Shipping.title
+      - field_id: shipping_address_lines
+        field_name: Shipping Address Lines
+        type: array
+        required: false
+        purpose: Fields for street address, apartment/suite, city/state/zip
+        destination: Checkout.Shipping.address_lines
+    payment:
+      - field_id: payment_title
+        field_name: Payment Title
+        type: string
+        required: true
+        purpose: Heading for the payment information section
+        destination: Checkout.Payment.title
+      - field_id: payment_method_label
+        field_name: Payment Method Label
+        type: string
+        required: false
+        purpose: Label describing accepted payment methods
+        destination: Checkout.Payment.method_label
+    order_review:
+      - field_id: order_review_title
+        field_name: Order Review Title
+        type: string
+        required: true
+        purpose: Heading summarizing the order before placement
+        destination: Checkout.OrderReview.title
+      - field_id: order_review_subtitle
+        field_name: Order Review Subtitle
+        type: string
+        required: false
+        purpose: Subtitle reinforcing order details
+        destination: Checkout.OrderReview.subtitle
+    confirmation:
+      - field_id: confirmation_title
+        field_name: Confirmation Title
+        type: string
+        required: true
+        purpose: Heading displayed after successful order placement
+        destination: Checkout.Confirmation.title
+      - field_id: confirmation_subtitle
+        field_name: Confirmation Subtitle
+        type: string
+        required: false
+        purpose: Subtext thanking the customer and referencing the order
+        destination: Checkout.Confirmation.subtitle
+
+  confirmation:
+    confirmation_title:
+      - field_id: confirmation_title
+        field_name: Confirmation Title
+        type: string
+        required: true
+        purpose: Heading displayed after successful order placement
+        destination: Confirmation.Confirmation.title
+      - field_id: confirmation_subtitle
+        field_name: Confirmation Subtitle
+        type: string
+        required: false
+        purpose: Subtext thanking the customer and referencing the order
+        destination: Confirmation.Confirmation.subtitle
+    order_number:
+      - field_id: order_number
+        field_name: Order Number
+        type: string
+        required: true
+        purpose: Order reference number for customer tracking
+        destination: Confirmation.OrderNumber
+    continue_shopping:
+      - field_id: continue_shopping_cta_text
+        field_name: Continue Shopping CTA Text
+        type: string
+        required: true
+        purpose: Primary CTA to return to shopping or view order history
+        destination: Confirmation.ContinueShopping.cta
+
+  search:
+    search_bar:
+      - field_id: search_placeholder
+        field_name: Search Placeholder
+        type: string
+        required: true
+        purpose: Placeholder text in the search input field
+        destination: Search.SearchBar.placeholder
+      - field_id: search_button_text
+        field_name: Search Button Text
+        type: string
+        required: false
+        purpose: Accessible label for the search submit button
+        destination: Search.SearchBar.button_text
+    search_results:
+      - field_id: search_results_no_matches_message
+        field_name: Search Results No Matches Message
+        type: string
+        required: false
+        purpose: Message displayed when no products match the query
+        destination: Search.Results.no_matches_message
+    no_results:
+      - field_id: no_results_message
+        field_name: No Results Message
+        type: string
+        required: true
+        purpose: Message displayed when the search yields no results
+        destination: Search.NoResults.message
+
+  support:
+    support_hero:
+      - field_id: support_hero_title
+        field_name: Support Hero Title
+        type: string
+        required: true
+        purpose: Heading and brief description of support options
+        destination: Support.Hero.title
+      - field_id: support_hero_image
+        field_name: Support Hero Image
+        type: url
+        required: false
+        purpose: Optional hero image for the support section
+        destination: Support.Hero.image
+    contact_methods:
+      - field_id: support_email
+        field_name: Support Email
+        type: string
+        required: true
+        purpose: Primary support email address
+        destination: Support.ContactMethods.email
+      - field_id: support_phone
+        field_name: Support Phone
+        type: string
+        required: true
+        purpose: Primary support phone number
+        destination: Support.ContactMethods.phone
+      - field_id: support_callback
+        field_name: Callback Request
+        type: string
+        required: false
+        purpose: Label for callback request CTA
+        destination: Support.ContactMethods.callback
+    support_articles:
+      - field_id: support_articles_title
+        field_name: Support Articles Title
+        type: string
+        required: true
+        purpose: Title for the support articles section
+        destination: Support.Articles.title
+      - field_id: support_faq_link
+        field_name: Support FAQ Link
+        type: string
+        required: false
+        purpose: Link to the FAQ page
+        destination: Support.Articles.faq_link
+    service_overview:
+      - field_id: service_overview_title
+        field_name: Service Overview Title
+        type: string
+        required: true
+        purpose: Title for the service offerings overview
+        destination: Support.ServiceOverview.title
+      - field_id: service_list_title
+        field_name: Service List Title
+        type: string
+        required: false
+        purpose: Title for the itemized services list
+        destination: Support.ServiceList.title
+
+  contact:
+    contact_hero:
+      - field_id: contact_hero_title
+        field_name: Contact Hero Title
+        type: string
+        required: true
+        purpose: Heading and brief description of contact options
+        destination: Contact.Hero.title
+      - field_id: contact_hero_image
+        field_name: Contact Hero Image
+        type: url
+        required: false
+        purpose: Optional hero image for the contact section
+        destination: Contact.Hero.image
+    contact_form:
+      - field_id: contact_form_name
+        field_name: Contact Form Name Field
+        type: string
+        required: true
+        purpose: Label for the name input field
+        destination: Contact.Form.name
+      - field_id: contact_form_email
+        field_name: Contact Form Email Field
+        type: string
+        required: true
+        purpose: Label for the email input field
+        destination: Contact.Form.email
+      - field_id: contact_form_subject
+        field_name: Contact Form Subject Field
+        type: string
+        required: true
+        purpose: Label for the subject input field
+        destination: Contact.Form.subject
+      - field_id: contact_form_message
+        field_name: Contact Form Message Field
+        type: string
+        required: true
+        purpose: Label for the message body textarea
+        destination: Contact.Form.message
+    store_locator:
+      - field_id: store_locator_search_query
+        field_name: Store Locator Search Query
+        type: string
+        required: true
+        purpose: Initial search query or location input
+        destination: Contact.StoreLocator.search_query
+      - field_id: store_locator_map_zoom
+        field_name: Store Locator Map Zoom
+        type: number
+        required: false
+        purpose: Initial map zoom level
+        destination: Contact.StoreLocator.map_zoom
+    social_links:
+      - field_id: social_link_facebook
+        field_name: Social Link Facebook
+        type: string
+        required: false
+        purpose: URL to the brand's Facebook page
+        destination: Contact.SocialLinks.facebook
+      - field_id: social_link_twitter
+        field_name: Social Link Twitter
+        type: string
+        required: false
+        purpose: URL to the brand's Twitter/X page
+        destination: Contact.SocialLinks.twitter
+      - field_id: social_link_instagram
+        field_name: Social Link Instagram
+        type: string
+        required: false
+        purpose: URL to the brand's Instagram page
+        destination: Contact.SocialLinks.instagram
+
+  not_found:
+    not_found_message:
+      - field_id: not_found_message
+        field_name: Not Found Message
+        type: string
+        required: true
+        purpose: Message explaining the resource could not be found
+        destination: NotFound.Message
+    navigation_cta:
+      - field_id: navigation_cta_text
+        field_name: Navigation CTA Text
+        type: string
+        required: true
+        purpose: Label for the return-to-shop/home CTA
+        destination: NotFound.NavigationCta.text
+
+  wishlist:
+    wishlist_hero:
+      - field_id: wishlist_hero_title
+        field_name: Wishlist Hero Title
+        type: string
+        required: true
+        purpose: Heading and introductory text for the wishlist section
+        destination: Wishlist.Hero.title
+      - field_id: wishlist_hero_image
+        field_name: Wishlist Hero Image
+        type: url
+        required: false
+        purpose: Optional hero image for the wishlist section
+        destination: Wishlist.Hero.image
+    wishlist_grid:
+      - field_id: wishlist_grid_caption
+        field_name: Wishlist Grid Caption
+        type: string
+        required: false
+        purpose: Optional caption above the wishlist grid
+        destination: Wishlist.Grid.caption
+
+  account:
+    account_nav:
+      - field_id: account_nav_title
+        field_name: Account Nav Title
+        type: string
+        required: true
+        purpose: Title for the account navigation section
+        destination: Account.AccountNav.title
+    orders:
+      - field_id: orders_title
+        field_name: Orders Title
+        type: string
+        required: true
+        purpose: Title for the orders/history section
+        destination: Account.Orders.title
+      - field_id: orders_subtitle
+        field_name: Orders Subtitle
+        type: string
+        required: false
+        purpose: Subtitle describing order history
+        destination: Account.Orders.subtitle
+    profile:
+      - field_id: profile_title
+        field_name: Profile Title
+        type: string
+        required: true
+        purpose: Title for the profile/identity section
+        destination: Account.Profile.title
+      - field_id: profile_subtitle
+        field_name: Profile Subtitle
+        type: string
+        required: false
+        purpose: Subtitle for profile identity section
+        destination: Account.Profile.subtitle
+    addresses:
+      - field_id: addresses_title
+        field_name: Addresses Title
+        type: string
+        required: true
+        purpose: Title for the saved addresses section
+        destination: Account.Addresses.title
+      - field_id: addresses_subtitle
+        field_name: Addresses Subtitle
+        type: string
+        required: false
+        purpose: Subtitle for saved addresses section
+        destination: Account.Addresses.subtitle
+
+  order_tracking:
+    order_tracking_hero:
+      - field_id: order_tracking_hero_title
+        field_name: Order Tracking Hero Title
+        type: string
+        required: true
+        purpose: Heading and fields for order lookup by number or email
+        destination: OrderTracking.Hero.title
+      - field_id: order_tracking_hero_subtitle
+        field_name: Order Tracking Hero Subtitle
+        type: string
+        required: false
+        purpose: Subtitle describing order lookup methods
+        destination: OrderTracking.Hero.subtitle
+    order_history:
+      - field_id: order_tracking_order_number
+        field_name: Order Tracking Order Number
+        type: string
+        required: true
+        purpose: Order number field for lookup
+        destination: OrderTracking.OrderNumber
+      - field_id: order_tracking_email
+        field_name: Order Tracking Email
+        type: string
+        required: true
+        purpose: Email field for order lookup
+        destination: OrderTracking.Email
+
+  store_locator:
+    store_locator_hero:
+      - field_id: store_locator_hero_title
+        field_name: Store Locator Hero Title
+        type: string
+        required: true
+        purpose: Heading and search interface for store locations
+        destination: StoreLocator.Hero.title
+      - field_id: store_locator_hero_subtitle
+        field_name: Store Locator Hero Subtitle
+        type: string
+        required: false
+        purpose: Subtitle describing the store search
+        destination: StoreLocator.Hero.subtitle
+    store_grid:
+      - field_id: store_grid_caption
+        field_name: Store Grid Caption
+        type: string
+        required: false
+        purpose: Optional caption above the store grid
+        destination: StoreLocator.Grid.caption
+      - field_id: store_grid_no_results
+        field_name: Store Grid No Results Message
+        type: string
+        required: true
+        purpose: Message displayed when no stores match the search
+        destination: StoreLocator.Grid.no_results
+
+  faq:
+    faq_hero:
+      - field_id: faq_hero_title
+        field_name: FAQ Hero Title
+        type: string
+        required: true
+        purpose: Heading and introduction to the FAQ section
+        destination: FAQ.Hero.title
+      - field_id: faq_hero_image
+        field_name: FAQ Hero Image
+        type: url
+        required: false
+        purpose: Optional hero image for the FAQ section
+        destination: FAQ.Hero.image
+    faq_grid:
+      - field_id: faq_grid_caption
+        field_name: FAQ Grid Caption
+        type: string
+        required: false
+        purpose: Optional caption above the FAQ grid
+        destination: FAQ.Grid.caption
+
+  reviews:
+    reviews_hero:
+      - field_id: reviews_hero_title
+        field_name: Reviews Hero Title
+        type: string
+        required: true
+        purpose: Heading and brief introduction to the reviews section
+        destination: Reviews.Hero.title
+      - field_id: reviews_hero_image
+        field_name: Reviews Hero Image
+        type: url
+        required: false
+        purpose: Optional hero image for the reviews section
+        destination: Reviews.Hero.image
+    review_list:
+      - field_id: review_list_caption
+        field_name: Review List Caption
+        type: string
+        required: false
+        purpose: Optional caption above the review list
+        destination: Reviews.List.caption
+
+  blog:
+    blog_hero:
+      - field_id: blog_hero_title
+        field_name: Blog Hero Title
+        type: string
+        required: true
+        purpose: Heading and featured image for the blog section
+        destination: Blog.Hero.title
+      - field_id: blog_hero_image
+        field_name: Blog Hero Image
+        type: url
+        required: true
+        purpose: Main hero image for the blog section
+        destination: Blog.Hero.image
+    article_list:
+      - field_id: article_list_caption
+        field_name: Article List Caption
+        type: string
+        required: false
+        purpose: Optional caption above the article grid
+        destination: Blog.ArticleList.caption
+
+  privacy:
+    privacy_header:
+      - field_id: privacy_title
+        field_name: Privacy Title
+        type: string
+        required: true
+        purpose: Document title (e.g. "Privacy Policy")
+        destination: Legal.Header.title
+      - field_id: privacy_subtitle
+        field_name: Privacy Subtitle
+        type: string
+        required: false
+        purpose: Effective date or version identifier
+        destination: Legal.Header.subtitle
+    privacy_body:
+      - field_id: privacy_body_content
+        field_name: Privacy Body Content
+        type: string
+        required: true
+        purpose: Full text of the privacy policy document
+        destination: Legal.Body.content
+
+  terms:
+    terms_header:
+      - field_id: terms_title
+        field_name: Terms Title
+        type: string
+        required: true
+        purpose: Document title (e.g. "Terms of Service")
+        destination: Legal.Header.title
+      - field_id: terms_subtitle
+        field_name: Terms Subtitle
+        type: string
+        required: false
+        purpose: Effective date or version identifier
+        destination: Legal.Header.subtitle
+    terms_body:
+      - field_id: terms_body_content
+        field_name: Terms Body Content
+        type: string
+        required: true
+        purpose: Full text of the terms of service document
+        destination: Legal.Body.content
+
+  returns:
+    returns_header:
+      - field_id: returns_title
+        field_name: Returns Title
+        type: string
+        required: true
+        purpose: Document title (e.g. "Returns & Refunds Policy")
+        destination: Legal.Header.title
+      - field_id: returns_subtitle
+        field_name: Returns Subtitle
+        type: string
+        required: false
+        purpose: Effective date or version identifier
+        destination: Legal.Header.subtitle
+    returns_body:
+      - field_id: returns_body_content
+        field_name: Returns Body Content
+        type: string
+        required: true
+        purpose: Full text of the returns and refunds policy document
+        destination: Legal.Body.content
+  not_found:
+    not_found_message:
+      - field_id: not_found_message
+        field_name: Not Found Message
+        type: string
+        required: true
+        purpose: Message explaining the resource could not be found
+        destination: NotFound.Message
+    navigation_cta:
+      - field_id: navigation_cta_text
+        field_name: Navigation CTA Text
+        type: string
+        required: true
+        purpose: Label for the return-to-shop/home CTA
+        destination: NotFound.NavigationCta.text
+
+  order_tracking:
+    order_tracking_hero:
+      - field_id: order_tracking_hero_title
+        field_name: Order Tracking Hero Title
+        type: string
+        required: true
+        purpose: Heading and fields for order lookup by number or email
+        destination: OrderTracking.Hero.title
+      - field_id: order_tracking_hero_subtitle
+        field_name: Order Tracking Hero Subtitle
+        type: string
+        required: false
+        purpose: Subtitle describing order lookup methods
+        destination: OrderTracking.Hero.subtitle
+    order_history:
+      - field_id: order_tracking_order_number
+        field_name: Order Tracking Order Number
+        type: string
+        required: true
+        purpose: Order number field for lookup
+        destination: OrderTracking.OrderNumber
+      - field_id: order_tracking_email
+        field_name: Order Tracking Email
+        type: string
+        required: true
+        purpose: Email field for order lookup
+        destination: OrderTracking.Email
+
+  store_locator:
+    store_locator_hero:
+      - field_id: store_locator_hero_title
+        field_name: Store Locator Hero Title
+        type: string
+        required: true
+        purpose: Heading and search interface for store locations
+        destination: StoreLocator.Hero.title
+      - field_id: store_locator_hero_subtitle
+        field_name: Store Locator Hero Subtitle
+        type: string
+        required: false
+        purpose: Subtitle describing the store search
+        destination: StoreLocator.Hero.subtitle
+    store_grid:
+      - field_id: store_grid_caption
+        field_name: Store Grid Caption
+        type: string
+        required: false
+        purpose: Optional caption above the store grid
+        destination: StoreLocator.Grid.caption
+      - field_id: store_grid_no_results
+        field_name: Store Grid No Results Message
+        type: string
+        required: true
+        purpose: Message displayed when no stores match the search
+        destination: StoreLocator.Grid.no_results

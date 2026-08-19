@@ -1,0 +1,377 @@
+# Build It Factory — Website Architecture
+# Source of truth for: React page creation, intake requirements, content mapping, QA validation.
+# Template: ELEC-PREIMIUM-ELECTRONICS-B5 | Phase 1 | Derived from template.brief.md
+
+template:
+  id: ELEC-PREIMIUM-ELECTRONICS-B5
+  name: E2 – Premium Electronics & Accessories
+  version: 0.1.0
+
+# ---------------------------------------------------------------------------
+# ROUTING CONVENTIONS
+# - Routes use Next.js App Router file conventions.
+# - Dynamic segments use [param] notation. Static pages are leaf routes.
+# - Page IDs are referenced by intake schema, content mapping, and QA checklist.
+# ---------------------------------------------------------------------------
+
+# ---------------------------------------------------------------------------
+# CORE PAGES — commerce-critical, required for the website objective
+# ---------------------------------------------------------------------------
+
+core_pages:
+
+  home:
+    route: /
+    type: static
+    purpose: Brand entry point — establish tone, surface discovery paths, and drive users toward product discovery and purchase.
+    sections:
+      - id: hero
+        purpose: Editorial hero with primary CTA to explore products
+      - id: featured_products
+        purpose: Curated product grid to seed cart intent
+      - id: product_categories
+        purpose: Visual entry into top-level product categories
+      - id: new_arrivals
+        purpose: Highlight new or featured products
+      - id: featured_collections
+        purpose: Showcase curated collections
+      - id: accessories
+        purpose: Featured accessories and add-on products
+      - id: promotional_section
+        purpose: Time-limited offers and special promotions
+      - id: lifestyle_editorial
+        purpose: Editorial composition reinforcing brand positioning
+      - id: customer_benefits
+        purpose: Reinforce trust (warranty, support, policies)
+      - id: support_section
+        purpose: Quick links to support resources
+      - id: newsletter
+        purpose: Capture email leads (supporting conversion goal)
+      - id: footer
+        purpose: Navigation utilities, newsletter capture, legal links, brand sign-off
+
+  shop:
+    route: /shop
+    type: static
+    purpose: Full catalog browse with filtering and pagination.
+    sections:
+      - id: page_header
+        purpose: Title and result count context
+      - id: catalog_filters
+        purpose: Filter by category, brand, price, features, compatibility
+      - id: product_grid
+        purpose: Paginated product cards linking to product detail
+      - id: pagination
+        purpose: Traverse catalog pages
+      - id: featured_products
+        purpose: Highlight featured or promotional products
+
+  category:
+    route: /shop/[category]
+    type: dynamic
+    purpose: Filtered catalog view scoped to a single category.
+    sections:
+      - id: category_hero
+        purpose: Category title, description, and visual context
+      - id: catalog_filters
+        purpose: Filter within category (price, features, compatibility)
+      - id: product_grid
+        purpose: Paginated products in the category
+      - id: pagination
+        purpose: Traverse category pages
+      - id: related_categories
+        purpose: Cross-sell related category groups
+
+  product:
+    route: /product/[id]
+    type: dynamic
+    purpose: Convert interest to cart action via full product detail.
+    sections:
+      - id: gallery
+        purpose: Multi-image product imagery, rendered as a carousel/gallery
+      - id: product_info
+        purpose: Title, price, description, variants, and add-to-cart CTA
+      - id: product_features
+        purpose: Specifications, materials, care, warranty, and compatibility
+      - id: related_products
+        purpose: Cross-sell related items from the same or complementary categories
+
+  comparison:
+    route: /compare
+    type: static
+    purpose: Allow customers to compare similar products side-by-side.
+    sections:
+      - id: product_selection
+        purpose: Product selection interface with image thumbnails
+      - id: product_images
+        purpose: Product images for direct comparison
+      - id: key_specs
+        purpose: Key specifications table (dimensions, battery, connectivity, etc.)
+      - id: features
+        purpose: Features checklist (performance, connectivity, compatibility, ratings)
+      - id: purchase_cta
+        purpose: Primary CTA to purchase one or more compared products
+
+  collections:
+    route: /collections
+    type: static
+    purpose: Organized product collections by theme, style, or use case.
+    sections:
+      - id: collections_hero
+        purpose: Intro headline and visual anchor for the collections section
+      - id: collection_grid
+        purpose: Curated collection cards linking to related product detail pages
+      - id: featured_collection
+        purpose: Spotlight a single featured collection with deeper detail
+
+  deals:
+    route: /deals
+    type: static
+    purpose: Highlight time-limited offers and special promotions.
+    sections:
+      - id: deals_hero
+        purpose: Headline and visual anchor for deal pricing
+      - id: deal_cards
+        purpose: Grid of discounted products with original and sale pricing
+      - id: promotion_banner
+        purpose: Broad promotional banner for store-wide offers
+
+  accessories:
+    route: /accessories
+    type: static
+    purpose: Dedicated showcase for accessory products.
+    sections:
+      - id: accessories_hero
+        purpose: Heading and introductory text for the accessories category
+      - id: accessory_grid
+        purpose: Grid of accessory product cards
+      - id: compatibility_notes
+        purpose: Highlight compatibility across product lines
+
+  cart:
+    route: /cart
+    type: static
+    purpose: Review selected items and advance to checkout.
+    sections:
+      - id: cart_items
+        purpose: Line items with quantity controls and remove options
+      - id: cart_summary
+        purpose: Subtotal, shipping estimate, and order total
+
+  checkout:
+    route: /checkout
+    type: static
+    purpose: Capture fulfillment details and complete the order.
+    sections:
+      - id: customer_info
+        purpose: Contact and billing identity fields
+      - id: shipping
+        purpose: Delivery address and method selection
+      - id: payment
+        purpose: Payment entry (prototype — no live processing assumed)
+      - id: order_review
+        purpose: Final cart, totals, and placement confirmation
+      - id: confirmation
+        purpose: Post-order success state and order reference
+
+  confirmation:
+    route: /checkout/confirmation
+    type: static
+    purpose: Display post-order success state and order reference.
+    sections:
+      - id: confirmation_title
+        purpose: Heading displayed after successful order placement
+      - id: confirmation_subtitle
+        purpose: Subtext thanking the customer and referencing the order
+      - id: order_number
+        purpose: Order reference number for customer tracking
+      - id: continue_shopping
+        purpose: CTA to return to shopping or view order history
+
+  search:
+    route: /search
+    type: static
+    purpose: On-site search results for catalog navigation.
+    sections:
+      - id: search_bar
+        purpose: Query input with active query echo
+      - id: search_results
+        purpose: Product matches as a result grid
+      - id: no_results
+        purpose: Empty-state with suggestions and category links
+
+  support:
+    route: /support
+    type: static
+    purpose: Customer support landing with contact and service options.
+    sections:
+      - id: support_hero
+        purpose: Heading and brief description of support options
+      - id: contact_methods
+        purpose: Live chat, email, phone, and callback request fields
+      - id: support_articles
+        purpose: Links to help articles, troubleshooting guides, and FAQs
+      - id: service_overview
+        purpose: Overview of service offerings (repairs, replacements, etc.)
+
+  contact:
+    route: /contact
+    type: static
+    purpose: Allow customers to get in touch with sales or support inquiries.
+    sections:
+      - id: contact_hero
+        purpose: Heading and brief description of contact options
+      - id: contact_form
+        purpose: Fields for name, email, subject, and message body
+      - id: store_locator
+        purpose: Store location map and visiting hours (if applicable)
+      - id: social_links
+        purpose: Links to social media channels and brand accounts
+
+  not_found:
+    route: /404
+    type: static
+    purpose: Graceful recovery from broken links or invalid URLs.
+    sections:
+      - id: not_found_message
+        purpose: Clear explanation of the missing resource
+      - id: navigation_cta
+        purpose: Return paths to home and shop
+
+# ---------------------------------------------------------------------------
+# ADDITIONAL PAGES — supportive of discovery, trust, and conversion
+# ---------------------------------------------------------------------------
+
+additional_pages:
+
+  wishlist:
+    route: /wishlist
+    type: static
+    purpose: Allow customers to save and manage product wishlists.
+    sections:
+      - id: wishlist_hero
+        purpose: Heading and introductory text for the wishlist section
+      - id: wishlist_grid
+        purpose: Grid of saved products with remove options
+
+  account:
+    route: /account
+    type: static
+    purpose: Authenticated self-service for orders and profile.
+    sections:
+      - id: account_nav
+        purpose: Section navigation (orders, profile, addresses)
+      - id: orders
+        purpose: Order history and status
+      - id: profile
+        purpose: Account identity and preferences
+      - id: addresses
+        purpose: Saved shipping addresses
+
+  order_tracking:
+    route: /order-tracking
+    type: static
+    purpose: Track order status and delivery details.
+    sections:
+      - id: order_tracking_hero
+        purpose: Heading and fields for order lookup by number or email
+      - id: order_history
+        purpose: List of orders with status indicators
+
+  store_locator:
+    route: /store-locator
+    type: static
+    purpose: Help customers find physical store locations.
+    sections:
+      - id: store_locator_hero
+        purpose: Heading and search interface for store locations
+      - id: store_grid
+        purpose: Grid of store locations with address and hours
+
+  faq:
+    route: /faq
+    type: static
+    purpose: Frequently asked questions supporting purchase confidence.
+    sections:
+      - id: faq_hero
+        purpose: Heading and introduction to the FAQ section
+      - id: faq_grid
+        purpose: Accordion-style list of common questions and answers
+
+  reviews:
+    route: /reviews
+    type: static
+    purpose: Display customer reviews and ratings.
+    sections:
+      - id: reviews_hero
+        purpose: Heading and brief introduction to the reviews section
+      - id: review_list
+        purpose: List of verified customer reviews with ratings
+
+  blog:
+    route: /blog
+    type: static
+    purpose: Editorial blog supporting SEO and brand authority.
+    sections:
+      - id: blog_hero
+        purpose: Heading and featured image for the blog section
+      - id: article_list
+        purpose: List of blog posts with excerpts and publish dates
+
+  privacy:
+    route: /privacy
+    type: static
+    purpose: Privacy policy documentation for compliance.
+    sections:
+      - id: privacy_header
+        purpose: Document title and effective date
+      - id: privacy_body
+        purpose: Full text of the privacy policy
+
+  terms:
+    route: /terms
+    type: static
+    purpose: Terms of service documentation for compliance.
+    sections:
+      - id: terms_header
+        purpose: Document title and effective date
+      - id: terms_body
+        purpose: Full text of the terms of service
+
+  returns:
+    route: /returns
+    type: static
+    purpose: Returns and refunds policy documentation.
+    sections:
+      - id: returns_header
+        purpose: Document title and effective date
+      - id: returns_body
+        purpose: Full text of the returns and refunds policy
+
+# ---------------------------------------------------------------------------
+# GLOBAL LAYOUT
+# Applied to all pages via the root layout component.
+# Sections are NOT per-page; they define shared chrome.
+# ---------------------------------------------------------------------------
+
+global_layout:
+  header:
+    purpose: Brand identity, primary navigation, search, account/cart access, and language/Currency selector.
+  footer:
+    purpose: Navigation utilities, newsletter capture, legal links, and brand sign-off.
+
+# ---------------------------------------------------------------------------
+# SCOPING DECISIONS (assumptions to validate)
+# ---------------------------------------------------------------------------
+# - Excluded from Phase 1 scope: real payment processing, inventory back-end integration,
+#   multi-currency/locale support, and headless CMS connectivity. These can be
+#   enabled via extension hooks in later phases.
+# - Product variant fields (size, color, configuration) are display-only in Phase 1;
+#   stock/inventory quantities are not modeled until a commerce backend is specified.
+# - The checkout.payment section is a prototype; no live payment backend assumed.
+# - Legal pages (Privacy, Terms) are prototype static pages; backend compliance
+#   validation deferred to later phases.
+# - Real payment integration, inventory sync, and headless CMS wiring are scoped out
+#   of Phase 1 and will be addressed via EKOMS / Factory Console extension points in
+#   subsequent phases.
+# ---------------------------------------------------------------------------

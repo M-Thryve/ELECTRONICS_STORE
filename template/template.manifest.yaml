@@ -1,0 +1,106 @@
+# Build It Factory — Template Manifest
+# References: Template Definition Brief (template/template.brief.md), sitemap.yaml
+# This manifest is the package metadata consumed by Factory Console, EKOMS, and Build Card generation.
+
+template:
+  id: ELEC-PREIMIUM-ELECTRONICS-B5
+  name: E2 – Premium Electronics & Accessories
+  version: 1.0.0
+  status: active
+  category: e-commerce
+  industry: consumer_electronics_retail
+  tags:
+    - e-commerce
+    - electronics
+    - accessories
+    - retail
+    - catalog
+    - cart
+    - checkout
+    - editorial
+    - responsive
+    - conversion
+  objective: >
+    Provide a reusable, componentized e-commerce storefront template
+    for consumer electronics and accessories retailers, fully configurable
+    through an intake schema with no client-specific content baked in.
+  target_client_profile: >
+    Small-to-enterprise consumer electronics retailers, technology brands,
+    and accessory boutiques building an online storefront. Clients value
+    editorial presentation, catalog clarity, and a polished branded experience
+    over heavy promotional tooling.
+
+repository:
+  type: git
+  url: https://github.com/M-Thryve/ELECTRONICS_STORE.git
+  branch: production
+
+stack:
+  framework:
+    name: Next.js
+    version: "16.3.1"
+  frontend:
+    library: React
+    version: "19.2.8"
+  language:
+    name: TypeScript
+    version: "^5"
+    styling:
+      methodology: Tailwind CSS
+      version: "^4"
+
+pages:
+  required:
+    - home
+    - shop
+    - category
+    - product
+    - comparison
+    - collections
+    - deals
+    - accessories
+    - cart
+    - checkout
+    - confirmation
+    - search
+    - support
+    - not_found
+  additional:
+    - wishlist
+    - account
+    - order_tracking
+    - store_locator
+    - faq
+    - reviews
+    - blog
+    - privacy
+    - terms
+    - returns
+
+supported_extensions:
+  - name: content
+    purpose: Intake-driven content injection (brand, colors, fonts,
+      categories, products, hero, services, footer data).
+  - name: design
+    purpose: Design-token-driven theming (color palettes, typography,
+      spacing, radius, shadows, motion) applied via the design-tokens.yaml
+      reference.
+  - name: analytics
+    purpose: Page-view and event tracking injection (Google Analytics,
+      Consent management, EKOMS analytics integration).
+  - name: cart_checkout
+    purpose: Cart and checkout flow adapters — prototype hooks for
+      payment integration, order creation, and inventory sync.
+  - name: account
+    purpose: Authenticated account area hooks (order history, profile,
+      addresses) — front-end state management; backend wiring deferred.
+
+# ---------------------------------------------------------------------------
+# RULE COMPLIANCE
+# ---------------------------------------------------------------------------
+# Pages defined herein are an exact subset of sitemap.yaml page_ids.
+# Pages NOT present in sitemap.yaml are excluded (Sustainability, Stores,
+# Careers, Contact — scoped out of Phase 1 scope).
+# Extensions are scoped to generic placeholder names; EKOMS module
+# binding is deferred per Phase 0 assumption #11.
+# ---------------------------------------------------------------------------

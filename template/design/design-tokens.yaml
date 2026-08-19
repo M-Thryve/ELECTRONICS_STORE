@@ -1,0 +1,130 @@
+colors:
+  background:
+    100: '#FFFFFF'
+    description: 'Page background — clean white'
+  foreground:
+    100: '#111111'
+    description: 'Primary body text color'
+  card:
+    100: '#F5F5F7'
+    description: 'Card/panel background'
+    foreground: '#111111'
+  primary:
+    100: '#0071E3'
+    foreground: '#FFFFFF'
+    description: 'Main brand color — accent blue'
+  primary-foreground:
+    100: '#FFFFFF'
+    description: 'Text on primary color'
+  secondary:
+    100: '#F5F5F7'
+    foreground: '#111111'
+    description: 'Secondary supporting color — light gray'
+  secondary-foreground:
+    100: '#111111'
+    description: 'Text on secondary color'
+  accent:
+    100: '#FF6B35'
+    foreground: '#FFFFFF'
+    description: 'Accent/tertiary color — vibrant orange'
+  accent-foreground:
+    100: '#FFFFFF'
+    description: 'Text on accent color'
+  muted:
+    100: '#6E6E73'
+    description: 'Muted/secondary text color'
+  muted-foreground:
+    100: '#6E6E73'
+    description: 'Muted text foreground'
+  border:
+    100: '#E5E5EA'
+    description: 'Default border color'
+  ring:
+    100: '#0071E3'
+    description: 'Focus ring color — matches primary'
+
+typography:
+  font-family:
+    sans: "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif"
+    serif: "Georgia, ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif"
+  font-size:
+    xs: '0.75rem'
+    sm: '0.875rem'
+    base: '1rem'
+    lg: '1.125rem'
+    xl: '1.25rem'
+    '2xl': '1.5rem'
+    '3xl': '1.875rem'
+    '4xl': '2.25rem'
+    '5xl': '3rem'
+  line-height:
+    none: '1'
+    tight: '1.25'
+    normal: '1.5'
+    relaxed: '1.625'
+    loose: '1.75'
+  font-weight:
+    thin: 100
+    extralight: 200
+    light: 300
+    normal: 400
+    medium: 500
+    semibold: 600
+    bold: 700
+    extrabold: 800
+    black: 900
+
+spacing:
+  1: '0.25rem'
+  2: '0.5rem'
+  3: '0.75rem'
+  4: '1rem'
+  5: '1.25rem'
+  6: '1.5rem'
+  8: '2rem'
+  10: '2.5rem'
+  12: '3rem'
+  16: '4rem'
+  20: '5rem'
+  24: '6rem'
+
+border-radius:
+  sm: '0.125rem'
+  md: '0.25rem'
+  lg: '0.5rem'
+  xl: '0.75rem'
+  2xl: '1rem'
+
+shadows:
+  sm: '0 1px 2px 0 rgba(0, 0, 0, 0.05)'
+  md: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)'
+  lg: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)'
+  inner: 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.05)'
+
+breakpoints:
+  sm: '640px'
+  md: '768px'
+  lg: '1024px'
+  xl: '1280px'
+  '2xl': '1536px'
+
+motion:
+  transition-base: '150ms ease-out'
+  transition-fast: '150ms ease-out'
+  transition-slow: '200ms ease-out'
+  transition-curve: 'cubic-bezier(0.4, 0, 0.2, 1)'
+  hover-scale: '1.05'
+  hover-opacity: '0.9'
+
+css-properties:
+  --color-background: '#FFFFFF'
+  --color-foreground: '#111111'
+  --color-primary: '#0071E3'
+  --color-primary-foreground: '#FFFFFF'
+  --color-secondary: '#F5F5F7'
+  --color-secondary-foreground: '#111111'
+  --color-accent: '#FF6B35'
+  --color-accent-foreground: '#FFFFFF'
+  --color-border: '#E5E5EA'
+  --color-ring: '#0071E3'
+  --font-sans: "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif"
