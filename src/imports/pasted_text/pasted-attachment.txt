@@ -1,0 +1,2071 @@
+# FIGMA MAKE — E2 PREMIUM ELECTRONICS & ACCESSORIES RETAIL TEMPLATE PROMPT
+
+## ROLE
+
+You are now acting as the **Figma Design Architect** for the Build It Factory template system.
+
+The Master Role Prompt is the governing instruction.
+
+You are **NOT designing a website for a specific client**.
+
+You are creating the **Figma design reference for a reusable Build It Factory template** for premium consumer electronics and accessories retailers.
+
+The design must be:
+
+* reusable
+* componentized
+* responsive
+* data-driven in structure
+* client-neutral
+* compatible with the Build It Factory workflow
+* compatible with the existing Intake Form
+* compatible with future Next.js / React implementation
+* suitable for repeated client builds
+* suitable for e-commerce implementation
+* optimized for product discovery and conversion
+
+Do not create client-specific branding.
+
+Do not use Apple branding, Apple logos, Apple-specific UI, or Apple proprietary visual assets.
+
+Apple is used only as **visual and UX inspiration** for:
+
+* minimalism
+* product-first storytelling
+* large product imagery
+* generous whitespace
+* restrained typography
+* clean navigation
+* editorial product sections
+* premium visual hierarchy
+* simple conversion paths
+* strong product CTAs
+
+Do not copy Apple's website directly.
+
+Do not reproduce Apple's exact layouts, typography, copy, colors, navigation structure, or proprietary visual identity.
+
+The resulting template must work for multiple electronics retailers and technology brands.
+
+---
+
+# TEMPLATE
+
+## Template Identity
+
+**Template Name:** E2 – Premium Electronics & Accessories
+
+**Template ID:** `ELEC-Premium-Electronics-E2`
+
+**Category:** Retail – Consumer Electronics & Accessories
+
+**Template Type:** Custom-Build E-Commerce Template
+
+**Primary Website Objective:** Product Discovery + Online Purchase
+
+**Business Model:** B2C Electronics Retail
+
+**Target Client Profile:** Small to Enterprise Consumer Electronics Retailers
+
+**Transaction Type:** E-Commerce / Direct Purchase
+
+**Product Structure:** Single or Multi-Category
+
+**Store Structure:** Online Store
+
+**Primary Conversion:** Add to Cart / Purchase
+
+**Secondary Conversions:**
+
+* Product Discovery
+* Product Comparison
+* Wishlist
+* Store Visit
+* Newsletter Signup
+* Customer Support
+* Product Inquiry
+
+---
+
+# 1. DESIGN OBJECTIVE
+
+Create a premium, production-ready **Consumer Electronics and Accessories e-commerce website template**.
+
+The website should communicate:
+
+* innovation
+* technology
+* quality
+* reliability
+* premium product selection
+* modern lifestyle
+* convenience
+* trust
+* product expertise
+* seamless shopping
+
+The visual direction should feel:
+
+**Minimal + Premium + Modern + Editorial + Technology-Focused + Product-Centric**
+
+The design should be inspired by the product-focused presentation of leading technology retailers while remaining completely brand-neutral.
+
+Avoid:
+
+* generic marketplace aesthetics
+* cluttered e-commerce layouts
+* excessive gradients
+* excessive glassmorphism
+* excessive rounded cards
+* excessive shadows
+* overly decorative interfaces
+* dense product grids
+* outdated electronics-store aesthetics
+* aggressive promotional banners
+* visually noisy discount badges
+* excessive animations
+* generic SaaS appearance
+
+The website should feel like a **premium technology destination**, not a generic online marketplace.
+
+---
+
+# 2. CORE UX PRINCIPLE
+
+The entire website should follow this hierarchy:
+
+**Discover → Explore → Understand → Compare → Purchase**
+
+Users should be able to:
+
+1. Discover featured products
+2. Browse product categories
+3. Explore individual products
+4. Understand product benefits
+5. Compare relevant products
+6. Select variants
+7. Add products to cart
+8. Complete checkout
+
+The interface should minimize unnecessary friction.
+
+Product imagery and product information should receive the highest visual priority.
+
+---
+
+# 3. DESIGN SYSTEM
+
+Create a consistent design system that can be translated directly into:
+
+```text
+design-tokens.yaml
+```
+
+Do not create arbitrary one-off styles.
+
+---
+
+## Color Tokens
+
+Use a restrained five-token system.
+
+### Primary
+
+**Technology Black**
+
+`#111111`
+
+Use for:
+
+* primary buttons
+* headings
+* navigation emphasis
+* major UI controls
+* primary text
+* important interactions
+
+### Secondary
+
+**Graphite**
+
+`#6E6E73`
+
+Use for:
+
+* secondary text
+* metadata
+* supporting UI
+* descriptions
+* inactive states
+
+### Accent
+
+**Electric Blue**
+
+`#0071E3`
+
+Use sparingly for:
+
+* links
+* active states
+* selected states
+* interactive highlights
+* important product actions
+
+### Neutral
+
+**Soft Gray**
+
+`#F5F5F7`
+
+Use for:
+
+* secondary sections
+* product backgrounds
+* supporting content
+* category areas
+* visual separation
+
+### Background
+
+**White**
+
+`#FFFFFF`
+
+Use as the primary structural surface.
+
+White space is an important part of the visual language.
+
+Do not introduce unnecessary colors.
+
+Product photography may naturally introduce additional colors, but UI colors must remain restrained.
+
+---
+
+# 4. TYPOGRAPHY
+
+Use a modern, neutral sans-serif typography system.
+
+### Heading
+
+**Inter**
+
+### Body
+
+**Inter**
+
+Create a consistent hierarchy:
+
+```text
+Display
+H1
+H2
+H3
+H4
+
+Body Large
+Body
+Body Small
+Caption
+
+Button
+Navigation
+Label
+Price
+Product Metadata
+```
+
+Typography should emphasize:
+
+* clarity
+* hierarchy
+* product names
+* product benefits
+* pricing
+* CTA visibility
+
+Large display typography may be used for hero statements and product launches.
+
+Typography must be responsive.
+
+Desktop, tablet, and mobile sizes should scale appropriately.
+
+---
+
+# 5. SPACING SYSTEM
+
+Create a structured spacing scale.
+
+Use generous whitespace throughout the design.
+
+Maintain:
+
+* consistent section spacing
+* consistent product spacing
+* consistent card spacing
+* consistent typography spacing
+* consistent CTA spacing
+* consistent form spacing
+* consistent navigation spacing
+
+Recommended maximum content width:
+
+`1200–1280px`
+
+Premium product showcase sections may use wider full-bleed layouts.
+
+Avoid unnecessarily dense layouts.
+
+---
+
+# 6. CORE COMPONENT SYSTEM
+
+Create reusable Figma components and component variants.
+
+## Required Global Components
+
+* Desktop Navbar
+* Mobile Navbar
+* Footer
+* Button
+* Button Group
+* Container
+* Section Header
+* Breadcrumb
+* Search
+* Account Button
+* Cart Button
+* Badge
+* Tag
+* Divider
+* Modal
+* Drawer
+* Toast
+* Pagination
+
+## Required Product Components
+
+* Product Card
+* Featured Product Card
+* Product Grid
+* Product Carousel
+* Product Image Gallery
+* Product Thumbnail
+* Product Price
+* Product Rating
+* Product Badge
+* Product Variant Selector
+* Color Selector
+* Storage Selector
+* Product Feature List
+* Product Specification Table
+* Product Comparison Row
+* Product Availability
+* Product Recommendation
+* Related Products
+* Recently Viewed Products
+
+## Required Content Components
+
+* Hero
+* Product Hero
+* Image + Text Section
+* Feature Showcase
+* Category Card
+* Collection Card
+* Editorial Section
+* Promotional Banner
+* Statistics
+* Testimonial
+* FAQ Accordion
+* CTA Section
+
+## Required Commerce Components
+
+* Add to Cart
+* Buy Now
+* Wishlist
+* Quantity Selector
+* Cart Item
+* Cart Summary
+* Coupon Input
+* Shipping Method
+* Delivery Option
+* Payment Method
+* Order Summary
+* Checkout Step
+* Order Confirmation
+
+## Required Form Components
+
+* Text Input
+* Email Input
+* Phone Input
+* Select
+* Search Input
+* Textarea
+* Checkbox
+* Radio Button
+* Form Section
+* Newsletter Form
+* Contact Form
+* Product Inquiry Form
+
+Every component should have appropriate variants for:
+
+* default
+* hover
+* active
+* selected
+* disabled
+* loading
+* error
+* success
+* mobile where applicable
+
+---
+
+# 7. NAVIGATION
+
+Create a premium, minimal e-commerce navigation.
+
+Desktop navigation should prioritize product discovery.
+
+Recommended structure:
+
+* Store
+* Phones
+* Computers
+* Tablets
+* Audio
+* Wearables
+* Accessories
+* Deals
+* Support
+
+Utility actions:
+
+* Search
+* Account
+* Cart
+
+Primary navigation should remain visually lightweight.
+
+Do not overcrowd the navbar.
+
+Use dropdown or mega-menu structures where appropriate.
+
+Mega menus should support:
+
+* product categories
+* featured products
+* collections
+* accessories
+* promotional links
+
+Mobile navigation must use a clean drawer/menu system.
+
+The mobile header should provide:
+
+* menu
+* logo
+* search
+* cart
+
+---
+
+# 8. PAGE ARCHITECTURE
+
+The following sitemap is the source of truth.
+
+Do NOT add unrelated pages.
+
+---
+
+# CORE PAGES
+
+## 1. Home
+
+### Purpose
+
+Introduce the store, showcase major products, and drive users toward product discovery and purchase.
+
+### Sections
+
+* Hero
+* Featured Product
+* Product Categories
+* New Arrivals
+* Featured Collections
+* Product Highlights
+* Accessories
+* Promotional Section
+* Lifestyle / Editorial Section
+* Customer Benefits
+* Support Section
+* Newsletter
+* Footer
+
+The Home page should be highly visual.
+
+Do not make it a traditional dense e-commerce homepage.
+
+Use large product showcases and editorial compositions.
+
+---
+
+# 2. Shop
+
+### Purpose
+
+Provide the primary product discovery experience.
+
+Sections:
+
+* Shop Hero
+* Category Navigation
+* Filter Controls
+* Sort Controls
+* Product Grid
+* Featured Products
+* Pagination / Load More
+* Recently Viewed
+
+Required filtering:
+
+* Category
+* Brand
+* Price
+* Availability
+* Rating
+* Features
+* Compatibility
+
+The filtering system must be designed for future dynamic implementation.
+
+---
+
+# 3. Category Page
+
+Create a reusable category template.
+
+Example categories:
+
+* Smartphones
+* Laptops
+* Tablets
+* Desktop Computers
+* Monitors
+* Audio
+* Wearables
+* Gaming
+* Cameras
+* Accessories
+* Smart Home
+
+Do not hardcode these categories into the architecture.
+
+They should be data-driven.
+
+Sections:
+
+* Category Hero
+* Category Description
+* Subcategories
+* Featured Products
+* Product Grid
+* Filters
+* Sort
+* Promotional Section
+* Related Categories
+
+---
+
+# 4. Product Detail
+
+### Purpose
+
+Provide all information required for a confident purchase decision.
+
+This is one of the most important pages in the template.
+
+Sections:
+
+* Breadcrumb
+* Product Image Gallery
+* Product Name
+* Rating
+* Price
+* Financing / Payment Information
+* Product Description
+* Variant Selection
+* Color Selection
+* Storage / Configuration Selection
+* Availability
+* Delivery Information
+* Add to Cart
+* Buy Now
+* Wishlist
+* Key Features
+* Product Highlights
+* Specifications
+* What's Included
+* Compatibility
+* Reviews
+* FAQ
+* Related Products
+* Recently Viewed
+
+The primary purchase CTA must remain visually dominant.
+
+---
+
+# 5. Product Comparison
+
+### Purpose
+
+Allow customers to compare similar products.
+
+Provide:
+
+* Product selection
+* Product images
+* Pricing
+* Key specifications
+* Features
+* Dimensions
+* Battery
+* Performance
+* Connectivity
+* Compatibility
+* Ratings
+* Purchase CTA
+
+The comparison layout must work on desktop and mobile.
+
+Desktop:
+
+Horizontal comparison table.
+
+Mobile:
+
+Stacked comparison cards or horizontally scrollable comparison structure.
+
+---
+
+# 6. Collections
+
+### Purpose
+
+Create curated product groupings.
+
+Examples:
+
+* New Arrivals
+* Best Sellers
+* Work From Home
+* Mobile Essentials
+* Creator Setup
+* Gaming Setup
+* Smart Home
+* Student Essentials
+
+Collections must be reusable.
+
+Each collection may contain:
+
+* Hero
+* Editorial introduction
+* Featured products
+* Product grid
+* Supporting content
+* CTA
+
+---
+
+# 7. Deals / Promotions
+
+### Purpose
+
+Present promotional products without turning the website into a discount marketplace.
+
+Sections:
+
+* Promotional Hero
+* Featured Deals
+* Category Deals
+* Bundle Offers
+* Limited-Time Offers
+* Clearance / Sale
+* CTA
+
+Use promotional UI sparingly.
+
+Maintain the premium visual language.
+
+---
+
+# 8. Accessories
+
+### Purpose
+
+Showcase complementary products and increase average order value.
+
+Categories may include:
+
+* Cases
+* Chargers
+* Cables
+* Power Banks
+* Keyboards
+* Mice
+* Hubs
+* Adapters
+* Stands
+* Bags
+* Audio Accessories
+* Smart Home Accessories
+
+Use cross-selling relationships.
+
+Example:
+
+```text
+Laptop
+↓
+Compatible Charger
+↓
+Keyboard
+↓
+Mouse
+↓
+Laptop Stand
+```
+
+---
+
+# 9. Cart
+
+### Purpose
+
+Provide a simple purchase review experience.
+
+Sections:
+
+* Cart Items
+* Product Thumbnail
+* Product Name
+* Variant
+* Quantity
+* Price
+* Remove
+* Save for Later
+* Recommended Accessories
+* Subtotal
+* Shipping Estimate
+* Discount
+* Total
+* Checkout CTA
+
+The cart should remain visually clean.
+
+---
+
+# 10. Checkout
+
+### Purpose
+
+Complete the purchase with minimal friction.
+
+Create a multi-step checkout system.
+
+Steps:
+
+```text
+01 Information
+02 Delivery
+03 Payment
+04 Review
+05 Confirmation
+```
+
+Required fields:
+
+* Full Name
+* Email
+* Phone
+* Address
+* City
+* Region
+* Postal Code
+
+Payment UI must be designed as a reusable integration-ready component.
+
+Do not hardcode a specific payment provider.
+
+---
+
+# 11. Order Confirmation
+
+Sections:
+
+* Confirmation Message
+* Order Number
+* Order Summary
+* Delivery Information
+* Payment Summary
+* Estimated Delivery
+* Continue Shopping
+* Track Order
+
+Create a reusable success state.
+
+---
+
+# 12. Search Results
+
+### Purpose
+
+Help users quickly locate products.
+
+Sections:
+
+* Search Input
+* Search Query
+* Result Count
+* Suggested Categories
+* Filters
+* Sort
+* Product Grid
+* No Results State
+* Recommended Products
+
+Create:
+
+* default state
+* loading state
+* no-results state
+* error state
+
+---
+
+# 13. Support
+
+### Purpose
+
+Provide customer assistance.
+
+Sections:
+
+* Support Hero
+* Search Support
+* FAQs
+* Product Help
+* Shipping Help
+* Returns
+* Warranty
+* Contact Support
+* Store Information
+
+---
+
+# 14. Contact
+
+Sections:
+
+* Contact Hero
+* Contact Information
+* Store Locations
+* Business Hours
+* Contact Form
+* Support CTA
+* Social Links
+
+---
+
+# 15. About
+
+Sections:
+
+* About Hero
+* Company Story
+* Mission
+* Product Philosophy
+* Store Experience
+* Why Choose Us
+* CTA
+
+Keep the page concise and editorial.
+
+---
+
+# ADDITIONAL PAGES
+
+Create reusable templates for:
+
+## Wishlist
+
+* Saved Products
+* Product Grid
+* Availability
+* Add to Cart
+* Remove
+
+## Account
+
+* Profile
+* Orders
+* Wishlist
+* Addresses
+* Payment Preferences
+
+## Order Tracking
+
+* Order Number
+* Delivery Status
+* Timeline
+* Shipping Information
+
+## Store Locator
+
+* Store Search
+* Map
+* Store Cards
+* Opening Hours
+* Directions CTA
+
+## FAQ
+
+* FAQ Categories
+* Search
+* Accordion
+* Filter-ready structure
+
+## Reviews
+
+* Rating Summary
+* Review List
+* Rating Distribution
+* Review Filters
+
+## News / Blog
+
+Create:
+
+* Article listing
+* Featured article
+* Article card
+* Category/tag
+* Article template
+
+## Privacy Policy
+
+Create a clean legal-content layout.
+
+## Terms & Conditions
+
+Create a clean legal-content layout.
+
+## Returns & Refunds
+
+Create a reusable policy-content layout.
+
+---
+
+# 9. HOME PAGE VISUAL DIRECTION
+
+The Home page should be the strongest page in the template.
+
+The design should use a **premium product-launch aesthetic**.
+
+## Hero
+
+Use:
+
+* large product imagery
+* minimal copy
+* large typography
+* strong whitespace
+* clear CTA hierarchy
+
+Structure:
+
+Eyebrow:
+
+**NEW ARRIVAL**
+
+Headline:
+
+**Technology, beautifully designed.**
+
+Supporting text:
+
+Create realistic but generic placeholder copy describing the featured technology product.
+
+Primary CTA:
+
+**Shop Now**
+
+Secondary CTA:
+
+**Learn More**
+
+Use a large high-quality product image.
+
+The hero should feel like a premium technology launch rather than a traditional retail banner.
+
+---
+
+# 10. PRODUCT-FIRST VISUAL STORYTELLING
+
+Product presentation is the primary visual language.
+
+Use:
+
+* large product photography
+* isolated products
+* clean backgrounds
+* full-width imagery
+* editorial compositions
+* product close-ups
+* product-in-use imagery
+* feature callouts
+* specification highlights
+* large typography
+* generous whitespace
+
+Do not make every section a card grid.
+
+Use varied compositions:
+
+* full-width product hero
+* split-screen product section
+* centered product showcase
+* asymmetric product composition
+* horizontal product carousel
+* editorial feature section
+* comparison section
+* product detail showcase
+* lifestyle photography
+* product ecosystem layouts
+
+The visual rhythm should feel premium and intentional.
+
+---
+
+# 11. PRODUCT SHOWCASE SYSTEM
+
+Create reusable product showcase patterns.
+
+## Pattern A — Centered Product
+
+```text
+Large Product Image
+
+Product Name
+Short Description
+
+Learn More    Buy
+```
+
+## Pattern B — Split Screen
+
+```text
+Product Image | Product Information
+```
+
+## Pattern C — Full-Bleed
+
+```text
+--------------------------------
+        PRODUCT IMAGE
+--------------------------------
+
+Product Name
+Description
+CTA
+```
+
+## Pattern D — Product Grid
+
+Use for browsing multiple products.
+
+## Pattern E — Product Carousel
+
+Use for:
+
+* New Arrivals
+* Best Sellers
+* Accessories
+* Related Products
+
+---
+
+# 12. PRODUCT DATA SYSTEM
+
+The template must be data-driven.
+
+Use conceptual data structures:
+
+```text
+store
+navigation
+hero
+categories[]
+products[]
+collections[]
+promotions[]
+accessories[]
+reviews[]
+faqs[]
+stores[]
+orders[]
+cart
+customer
+support
+```
+
+Each product should conceptually support:
+
+```text
+product.id
+product.name
+product.slug
+product.category
+product.brand
+product.description
+product.price
+product.compareAtPrice
+product.images[]
+product.colors[]
+product.variants[]
+product.features[]
+product.specifications[]
+product.rating
+product.reviewCount
+product.stock
+product.badges[]
+product.compatibility[]
+product.relatedProducts[]
+```
+
+The design should allow these values to change without redesigning the component.
+
+Do not hardcode the number of products.
+
+---
+
+# 13. PRODUCT CARD SYSTEM
+
+Create multiple product-card variants.
+
+### Standard
+
+* Product Image
+* Product Name
+* Short Description
+* Price
+* Rating
+* CTA
+
+### Featured
+
+Larger visual treatment.
+
+### Compact
+
+For:
+
+* search results
+* recommendations
+* cart recommendations
+
+### Horizontal
+
+For:
+
+* related products
+* mobile sections
+* recommendation areas
+
+### Promotional
+
+Supports:
+
+* sale price
+* original price
+* promotion badge
+
+Cards must remain visually clean.
+
+Avoid excessive borders and decorative elements.
+
+---
+
+# 14. E-COMMERCE INTERACTION STATES
+
+Design all critical interaction states.
+
+Required states:
+
+* default
+* hover
+* active
+* selected
+* disabled
+* loading
+* out of stock
+* low stock
+* added to cart
+* wishlist active
+* error
+* success
+
+Examples:
+
+```text
+Add to Cart
+↓
+Adding...
+↓
+Added to Cart
+```
+
+Create appropriate micro-interaction-ready states without relying on excessive animation.
+
+---
+
+# 15. CART SYSTEM
+
+The cart must support:
+
+```text
+cart.items[]
+cart.subtotal
+cart.discount
+cart.shipping
+cart.tax
+cart.total
+```
+
+Create:
+
+* Empty Cart
+* Active Cart
+* Loading Cart
+* Error Cart
+* Recommended Products
+
+Empty cart should provide a clear:
+
+**Continue Shopping**
+
+CTA.
+
+---
+
+# 16. CHECKOUT SYSTEM
+
+Create reusable checkout components.
+
+Required:
+
+* Checkout Header
+* Progress Indicator
+* Customer Information
+* Address Form
+* Delivery Method
+* Payment Method
+* Order Summary
+* Coupon
+* Place Order
+* Error State
+* Success State
+
+The system must be compatible with future payment and shipping integrations.
+
+Do not design a specific payment provider unless the template intake explicitly specifies one.
+
+---
+
+# 17. STORE / LOCATION SYSTEM
+
+The template must support:
+
+### Single Store
+
+One physical retail location.
+
+### Multi-Store
+
+Multiple retail locations.
+
+Create reusable Store Card components.
+
+Each store may contain:
+
+* Store Name
+* Location
+* Address
+* Opening Hours
+* Phone
+* Image
+* Available Services
+* Directions CTA
+
+Do not hardcode the number of stores.
+
+---
+
+# 18. INTAKE COMPATIBILITY
+
+The design must correspond to fields that can later come from:
+
+```text
+template.intake.schema.yaml
+```
+
+Examples:
+
+```text
+company.name
+company.description
+company.logo
+
+hero.title
+hero.description
+hero.cta
+
+categories[]
+products[]
+collections[]
+promotions[]
+accessories[]
+
+contact.email
+contact.phone
+contact.address
+
+stores[]
+```
+
+Product fields:
+
+```text
+product.name
+product.description
+product.price
+product.images[]
+product.variants[]
+product.features[]
+product.specifications[]
+product.stock
+product.rating
+```
+
+Do not design content sections that require information the template intake cannot reasonably collect.
+
+---
+
+# 19. CONTENT MAPPING COMPATIBILITY
+
+Design every dynamic section so it can map to:
+
+```text
+template.content.mapping.json
+```
+
+Example:
+
+```text
+products[]
+    ↓
+Home.FeaturedProducts
+
+products[]
+    ↓
+Shop.ProductGrid
+
+product.name
+    ↓
+ProductDetail.ProductName
+
+product.images[]
+    ↓
+ProductDetail.ImageGallery
+
+product.price
+    ↓
+ProductDetail.Price
+
+product.variants[]
+    ↓
+ProductDetail.VariantSelector
+
+categories[]
+    ↓
+Shop.CategoryNavigation
+
+collections[]
+    ↓
+Home.FeaturedCollections
+
+stores[]
+    ↓
+StoreLocator.StoreGrid
+```
+
+Every major dynamic visual element should have an obvious content source.
+
+---
+
+# 20. PREMIUM RETAIL VARIANT
+
+The primary Figma design should represent:
+
+**E2 – Premium Electronics & Accessories – Modern Retail**
+
+Target industries:
+
+* Consumer Electronics
+* Mobile Technology
+* Computer Retail
+* Gaming
+* Audio
+* Smart Home
+* Technology Accessories
+
+Visual style:
+
+**Premium Technology Retail**
+
+The design should emphasize:
+
+* product quality
+* innovation
+* simplicity
+* trust
+* discovery
+* premium presentation
+* usability
+* conversion
+
+---
+
+# 21. BUDGET RETAIL VARIANT
+
+The same architecture must support a more accessible electronics retailer.
+
+The variant may change:
+
+* color tokens
+* promotional emphasis
+* product density
+* typography scale
+* pricing presentation
+* discount presentation
+
+However, it MUST reuse the same underlying component architecture.
+
+Do not duplicate the entire design system.
+
+The template must therefore support both:
+
+**Premium Electronics**
+
+and
+
+**Accessible Electronics Retail**
+
+without rebuilding the architecture.
+
+---
+
+# 22. RESPONSIVE DESIGN
+
+Create responsive designs for:
+
+### Desktop
+
+1440px
+
+### Laptop
+
+1280px
+
+### Tablet
+
+768px
+
+### Mobile
+
+390px
+
+All pages must have responsive behavior.
+
+Ensure:
+
+* no horizontal overflow
+* responsive grids
+* responsive typography
+* mobile navigation
+* stacked layouts
+* responsive forms
+* touch-friendly CTAs
+* appropriate image cropping
+* readable product information
+* mobile-friendly filters
+* mobile-friendly product galleries
+* mobile-friendly cart
+* mobile-friendly checkout
+
+Do not simply scale desktop down.
+
+Design intentional mobile layouts.
+
+For product grids:
+
+Desktop:
+
+```text
+4-column / 3-column
+```
+
+Tablet:
+
+```text
+2-column
+```
+
+Mobile:
+
+```text
+1-column / horizontal carousel
+```
+
+---
+
+# 23. MOBILE E-COMMERCE EXPERIENCE
+
+Mobile is a primary experience, not an afterthought.
+
+Design:
+
+* compact header
+* persistent cart access
+* search-first interaction
+* swipeable product galleries
+* horizontal product carousels
+* sticky purchase CTA where appropriate
+* bottom-sheet filters
+* simplified checkout
+* touch-friendly controls
+
+Product pages should make:
+
+**Add to Cart**
+
+easy to access without excessive scrolling.
+
+---
+
+# 24. ACCESSIBILITY
+
+Maintain:
+
+* strong color contrast
+* readable typography
+* visible focus states
+* large interactive targets
+* logical information hierarchy
+* accessible forms
+* clear CTA labels
+* keyboard-friendly interaction
+* meaningful error states
+* accessible product information
+
+Do not rely solely on color to communicate product status.
+
+---
+
+# 25. EXTENSION-READY DESIGN
+
+The design must provide UI integration points for approved external services.
+
+Potential integrations:
+
+* E-commerce platform → Product Catalog
+* Payment Gateway → Checkout
+* Shipping Provider → Delivery
+* CRM → Customer Information
+* Email Service → Contact / Order Emails
+* Google Maps → Store Locator
+* GA4 → Analytics
+* Meta Pixel → Marketing Analytics
+* Live Chat → Customer Support
+* Search Service → Product Search
+* Reviews Platform → Product Reviews
+* Inventory System → Product Availability
+
+Do not design complex ERP, warehouse management, manufacturing management, or internal operational systems as part of this template.
+
+Those are restricted/custom functionality.
+
+---
+
+# 26. CLIENT-NEUTRAL CONTENT
+
+Do NOT use:
+
+* Apple logo
+* Apple branding
+* Apple proprietary UI
+* Apple proprietary copy
+* real Apple product listings
+* real Apple product photography
+* real Apple promotional campaigns
+* real Apple addresses
+* real Apple phone numbers
+
+Do not make the resulting template appear to be an Apple website.
+
+Use clearly replaceable placeholder content.
+
+Example:
+
+**Technology Store**
+
+**Designed for the way you live and work.**
+
+Product placeholders should use generic names such as:
+
+* Pro Laptop
+* Smart Phone
+* Wireless Earbuds
+* Performance Tablet
+* Smart Watch
+* USB-C Hub
+* Wireless Keyboard
+
+All values must be replaceable through the Build It Intake process.
+
+---
+
+# 27. FIGMA COMPONENT ORGANIZATION
+
+Organize the Figma file logically.
+
+Recommended structure:
+
+```text
+E2 – Premium Electronics & Accessories
+│
+├── 00 – Foundations
+│   ├── Colors
+│   ├── Typography
+│   ├── Spacing
+│   ├── Grid
+│   └── Icons
+│
+├── 01 – Components
+│   ├── Navigation
+│   ├── Buttons
+│   ├── Product Cards
+│   ├── Commerce
+│   ├── Forms
+│   ├── Cards
+│   ├── Sections
+│   └── Feedback States
+│
+├── 02 – Home
+│
+├── 03 – Shop
+│
+├── 04 – Categories
+│
+├── 05 – Product Detail
+│
+├── 06 – Collections
+│
+├── 07 – Accessories
+│
+├── 08 – Deals
+│
+├── 09 – Comparison
+│
+├── 10 – Cart
+│
+├── 11 – Checkout
+│
+├── 12 – Account
+│
+├── 13 – Support
+│
+├── 14 – Store Locator
+│
+├── 15 – About
+│
+├── 16 – Additional Pages
+│
+└── 17 – Responsive
+    ├── Desktop
+    ├── Tablet
+    └── Mobile
+```
+
+---
+
+# 28. FIGMA DESIGN TOKENS
+
+Create the design so it can be translated into:
+
+```text
+design-tokens.yaml
+```
+
+Tokens should include:
+
+```text
+colors
+typography
+spacing
+container
+radius
+borders
+shadows
+buttons
+forms
+productCards
+breakpoints
+navigation
+commerce
+```
+
+Do not create random visual values throughout the design.
+
+Maintain a controlled visual system.
+
+---
+
+# 29. PRODUCT PHOTOGRAPHY DIRECTION
+
+Product imagery is critical.
+
+Use imagery that is:
+
+* high resolution
+* clean
+* professionally lit
+* product-focused
+* minimally staged
+* visually consistent
+* suitable for e-commerce
+
+Preferred compositions:
+
+* isolated product
+* front view
+* side view
+* angled view
+* close-up detail
+* lifestyle usage
+* product ecosystem
+
+Avoid:
+
+* low-quality stock imagery
+* excessive background clutter
+* inconsistent product photography
+* overly staged advertising imagery
+* unrelated lifestyle photos
+
+Product imagery should dominate where appropriate.
+
+---
+
+# 30. VISUAL HIERARCHY
+
+Prioritize visual elements in this order:
+
+```text
+1. Product
+2. Product Name
+3. Product Value Proposition
+4. Price
+5. Primary CTA
+6. Supporting Features
+7. Specifications
+8. Secondary Information
+```
+
+Do not allow secondary content to compete with the primary product action.
+
+---
+
+# 31. PROMOTIONAL SYSTEM
+
+Create reusable promotional components.
+
+Examples:
+
+* New
+* Featured
+* Best Seller
+* Limited Offer
+* Save
+* Bundle
+* Back to School
+* Seasonal
+
+Do not overuse badges.
+
+Promotions should feel intentional rather than aggressive.
+
+Create variants for:
+
+* homepage promotion
+* product card promotion
+* category promotion
+* product detail promotion
+* checkout promotion
+
+---
+
+# 32. SEARCH EXPERIENCE
+
+Create a modern search interaction.
+
+Desktop:
+
+Search may expand from the navigation.
+
+Mobile:
+
+Search should be immediately accessible.
+
+Search interface should support:
+
+```text
+Search products
+Search categories
+Suggested searches
+Recent searches
+Popular products
+Search results
+```
+
+Create:
+
+* empty state
+* active state
+* loading state
+* no results
+* results state
+
+---
+
+# 33. CUSTOMER TRUST SYSTEM
+
+Create reusable trust elements.
+
+Examples:
+
+* Secure Checkout
+* Authentic Products
+* Warranty
+* Easy Returns
+* Fast Delivery
+* Store Pickup
+* Customer Support
+
+Do not use fake certifications or fake trust badges.
+
+All trust content must remain editable.
+
+---
+
+# 34. DATA-DRIVEN E-COMMERCE ARCHITECTURE
+
+The template must be structured around reusable content objects.
+
+Conceptual model:
+
+```text
+store
+│
+├── company
+├── navigation
+├── categories[]
+├── products[]
+├── collections[]
+├── promotions[]
+├── accessories[]
+├── reviews[]
+├── faqs[]
+├── stores[]
+├── customer
+├── cart
+├── checkout
+└── support
+```
+
+The Figma design should visually correspond to this data architecture.
+
+---
+
+# 35. QUALITY STANDARD
+
+Before considering the Figma template complete, verify:
+
+## Architecture
+
+* Every required sitemap page has a design.
+* No unnecessary pages were added.
+* Commerce pages are clearly separated.
+* Product detail is complete.
+* Checkout is complete.
+* Responsive states are defined.
+
+## Components
+
+* Components are reusable.
+* Components use variants where appropriate.
+* Product cards are reusable.
+* Commerce components are reusable.
+* Forms are reusable.
+* No unnecessary one-off components exist.
+
+## Design
+
+* Design tokens are consistent.
+* Typography is consistent.
+* Colors follow the approved system.
+* Layout spacing is consistent.
+* Product imagery has strong visual priority.
+* The website feels premium and modern.
+* The interface does not look like a generic marketplace.
+
+## Content
+
+* No client-specific branding exists.
+* No Apple branding exists.
+* Dynamic product areas are clearly identifiable.
+* Product data can be populated from the Intake Form.
+* Promotional content remains editable.
+
+## E-Commerce
+
+* Product discovery is intuitive.
+* Product detail supports purchase decisions.
+* Cart is complete.
+* Checkout is complete.
+* Search is defined.
+* Filters are defined.
+* Product comparison is defined.
+* Wishlist is defined.
+* Order confirmation is defined.
+
+## Responsive
+
+* Desktop is complete.
+* Tablet behavior is defined.
+* Mobile behavior is defined.
+* Product grids adapt correctly.
+* Product galleries adapt correctly.
+* Checkout adapts correctly.
+* Navigation adapts correctly.
+
+## Integration
+
+* Product catalog has integration-ready structure.
+* Payment has integration-ready structure.
+* Shipping has integration-ready structure.
+* Inventory has integration-ready structure.
+* Store locator has map integration placeholder.
+* Analytics does not require visual redesign.
+* Customer support does not require visual redesign.
+
+---
+
+# 36. FINAL FIGMA MAKE INSTRUCTION
+
+Build the complete:
+
+**E2 – Premium Electronics & Accessories – Modern Retail**
+
+Figma template now.
+
+Prioritize:
+
+1. Design system
+2. Reusable components
+3. Product-first visual language
+4. Home page
+5. Shop experience
+6. Category pages
+7. Product detail
+8. Product comparison
+9. Cart
+10. Checkout
+11. Search
+12. Accessories / cross-selling
+13. Responsive layouts
+14. Extension-ready UI
+15. Intake-compatible content structure
+16. Client-neutral reusable architecture
+
+The visual inspiration should be based on the **principles of premium technology retail websites**, particularly:
+
+* minimal navigation
+* large product showcases
+* clean backgrounds
+* generous whitespace
+* editorial storytelling
+* restrained color
+* strong typography
+* clear product hierarchy
+* simple **Learn More / Shop / Buy** interactions
+
+However:
+
+**DO NOT COPY APPLE.**
+
+Apple is only the inspiration for the **quality, simplicity, product presentation, and UX discipline** of the design.
+
+The resulting website must have its own neutral visual identity and must be adaptable to different electronics retailers.
+
+Do not build a random collection of pages.
+
+Build a **single coherent design system representing a production-ready Build It Factory electronics e-commerce template**.
+
+The resulting Figma design must be suitable to serve as the visual reference for:
+
+```text
+sitemap.yaml
+template.manifest.yaml
+template.intake.schema.yaml
+template.content.mapping.json
+template.agent.instructions.md
+template.extensions.yaml
+template.sop.md
+template.qa.checklist.yaml
+design-tokens.yaml
+```
+
+and future:
+
+```text
+Next.js / React
+E-commerce Platform
+Product Catalog
+Cart
+Checkout
+Payment Integration
+Shipping Integration
+Inventory Integration
+Customer Account System
+```
+
+The final design must be:
+
+**premium, scalable, reusable, component-driven, product-centric, client-neutral, responsive, conversion-focused, data-driven, and implementation-ready.**

@@ -1,0 +1,10 @@
+{
+  "description": "This web application offers a sleek, user-friendly platform for showcasing products and services, inspired by Apple's design, ideal for businesses seeking modern presentation.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
